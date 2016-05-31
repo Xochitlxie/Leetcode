@@ -15,7 +15,7 @@ class Solution(object):
             self.result.append(path)
             return
         else:
-            for i in range(index+1,len(candidates)):
+            for i in range(index,len(candidates)):
                 if candidates[i] > target:
                     break
-                self.dfs(candidates,i,path+[candidates[i]],target-candidates[i])
+                self.dfs(candidates,i+1,path+[candidates[i]],target-candidates[i])
