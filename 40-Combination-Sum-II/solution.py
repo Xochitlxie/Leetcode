@@ -18,5 +18,4 @@ class Solution(object):
             for i in range(index+1,len(candidates)):
                 if candidates[i] > target:
                     break
-                else:
-                    self.dfs(candidates,i,path+[candidates[i]],target-candidates[i])
+                self.dfs(candidates,i,path+[candidates[i]],target-candidates[i])
