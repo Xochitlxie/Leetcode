@@ -6,7 +6,7 @@ class Solution(object):
         :type target: int
         :rtype: List[List[int]]
         """
-        candidated.sort()
+        candidates.sort()
         self.dfs(candidates,0,[],target)
         return self.result
         
