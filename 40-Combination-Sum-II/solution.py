@@ -1,6 +1,7 @@
 class Solution(object):
     result = []
     def combinationSum2(self, candidates, target):
+        self.result = []
         """
         :type candidates: List[int]
         :type target: int
@@ -16,6 +17,8 @@ class Solution(object):
             return
         else:
             for i in range(index,len(candidates)):
+                if i > index and candidates[i] == candidates[i-1]:
+                    continue
                 if candidates[i] > target:
                     break
                 self.dfs(candidates,i+1,path+[candidates[i]],target-candidates[i])
