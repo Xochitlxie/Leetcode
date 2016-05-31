@@ -1,5 +1,5 @@
 class Solution(object):
-    self.result = []
+    result = []
     def combinationSum2(self, candidates, target):
         """
         :type candidates: List[int]
@@ -7,11 +7,12 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         candidated.sort()
-        self
+        self.dfs(candidates,0,[],target)
+        return self.result
         
     def dfs(self, candidates, index, path, target):
         if target == 0:
-            result.append(path)
+            self.result.append(path)
             return
         else:
             for i in range(index+1,len(candidates)):
