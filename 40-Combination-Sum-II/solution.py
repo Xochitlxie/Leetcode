@@ -19,4 +19,4 @@ class Solution(object):
                 if candidates[i] > target:
                     break
                 else:
-                    self.dfs(candidates,index,path+[candidates[i]],target-candidates[i])
+                    self.dfs(candidates,index+1,path+[candidates[i]],target-candidates[i])
