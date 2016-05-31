@@ -11,7 +11,6 @@ class MovingAverage(object):
         self.sum = 0
         self.size = size
 
-
     def next(self, val):
         """
         :type val: int
@@ -21,9 +20,12 @@ class MovingAverage(object):
             self.queue.append(val)
             return float(val)
         else:
-            self.sum = self.sum - self.queue.popleft() + val
+            if len(queue) >= self.size:
+                self.sum = self.sum - self.queue.popleft() + val
+            else:
+                self.sum = self.sum + val
             self.queue.append(val)
-            return float(self.sum))/self.size
+            return float(self.sum)/self.size
         
 
 
