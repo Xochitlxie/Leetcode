@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         result = []
-        self.dfs(nums,path,result)
+        self.dfs(nums,[],result)
         return set(result)
         
         
