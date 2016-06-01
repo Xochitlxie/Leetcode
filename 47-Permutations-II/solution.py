@@ -12,5 +12,5 @@ class Solution(object):
     def dfs(self,nums,path,result):
         if not nums:
             result.append(path)
-        for i in xrange(nums):
+        for i in xrange(len(nums)):
             self.dfs(nums[:i]+nums[i+1:],path+[nums[i]],result)
