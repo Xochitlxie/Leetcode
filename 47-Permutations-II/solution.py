@@ -6,11 +6,12 @@ class Solution(object):
         """
         result = []
         self.dfs(nums,[],result)
-        return set(result)
+        return result
         
         
     def dfs(self,nums,path,result):
         if not nums:
-            result.append(path)
+            if path not in result:
+                result.append(path)
         for i in xrange(len(nums)):
             self.dfs(nums[:i]+nums[i+1:],path+[nums[i]],result)
