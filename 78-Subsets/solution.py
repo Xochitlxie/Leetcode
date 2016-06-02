@@ -4,7 +4,7 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[List[int]]
         """
-        result = []
+        result = [[]]
         if not nums:
             return result
         nums.sort()
@@ -17,4 +17,4 @@ class Solution(object):
             result.append(subset)
             return
         for i in range(len(nums)):
-            self.dfs(capacity-1,nums[i:],subset+[nums[i]],result)
+            self.dfs(capacity-1,nums[i+1:],subset+[nums[i]],result)
