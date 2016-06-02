@@ -4,7 +4,8 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[List[int]]
         """
+        nums.sort()
         result = [[]]
         for num in nums:
-            result += [subset+num for subset in result]
+            result += [subset+[num] for subset in result]
         return result
