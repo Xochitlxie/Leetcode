@@ -4,7 +4,7 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        return max(self.dp(num[:-1]),self.dp(num[1:]))
+        return max(self.dp(nums[:-1]),self.dp(nums[1:]))
         
     def dp(self,nums):
         rob = nums[0]
