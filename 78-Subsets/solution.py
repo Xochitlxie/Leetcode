@@ -6,5 +6,5 @@ class Solution(object):
         """
         result = [[]]
         for num in nums:
-            result += [subset+num for subset in results]
+            result += [subset+num for subset in result]
         return result
