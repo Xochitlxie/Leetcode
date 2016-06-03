@@ -9,7 +9,7 @@ class Solution(object):
         n = len(s)
         dp = [(i-1) for i in range(n+1)]
         for i in range(1,n+1):
-            for j in range(j):
+            for j in range(i):
                 temp = s[j:i]
                 if temp == temp[::-1]:
                     dp[i]=min(dp[i],dp[j]+1)
