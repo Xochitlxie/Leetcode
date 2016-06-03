@@ -11,6 +11,6 @@ class Solution(object):
         for i in range(1,n+1):
             for j in range(j):
                 temp = s[j:i]
-                if temp = temp[::-1]:
+                if temp == temp[::-1]:
                     dp[i]=min(dp[i],dp[j]+1)
         return dp[n]
