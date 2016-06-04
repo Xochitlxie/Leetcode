@@ -12,10 +12,8 @@ class Solution(object):
         
     def dfs(self,capacity,nums,sub,result):
         if capacity == 0:
-            result.append(list(sub))
+            result.append(sub)
             return
         for i in range(len(nums)):
-            sub.append(nums[i])
-            self.dfs(capacity-1,nums[i+1:],sub,result)
-            sub.pop()
+            self.dfs(capacity-1,nums[i+1:],sub+[nums[i]],result)
      # O(n^k)
