@@ -21,4 +21,4 @@ class Solution(object):
         string.append(list[j])
         self.dfs(k,n-1,list[:j]+list[j+1:],string)
         
-    #O(1)
+    #O(1) since the maximum number of n is 9
