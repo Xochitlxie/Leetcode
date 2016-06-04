@@ -25,3 +25,5 @@ class Solution(object):
 
     def convert_list_to_IP(self, list):
         return '.'.join(list)
+        
+    #O(1) n is 12(maximum),always constant number
