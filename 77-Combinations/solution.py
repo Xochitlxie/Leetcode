@@ -15,4 +15,4 @@ class Solution(object):
             result.append(sub)
             return
         for i in range(len(nums)):
-            self.dfs(capacity-1,nums[i:],sub+[nums[i]],result)
+            self.dfs(capacity-1,nums[:i]+nums[i+1:],sub+[nums[i]],result)
