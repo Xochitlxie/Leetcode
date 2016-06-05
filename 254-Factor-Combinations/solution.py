@@ -4,7 +4,6 @@ class Solution(object):
         :type n: int
         :rtype: List[List[int]]
         """
-        def getFactors(self, n):
         todo, combis = [(n, 2, [])], []
         while todo:
             n, i, combi = todo.pop()
