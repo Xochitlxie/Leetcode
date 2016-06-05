@@ -4,7 +4,7 @@ class Solution(object):
         :type num: int
         :rtype: bool
         """
-        if uglyFactor <= 0:
+        if num <= 0:
             return False
         uglyFactor = (2,3,5)
         for i in uglyFactor:
