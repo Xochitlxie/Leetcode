@@ -4,6 +4,8 @@ class Solution(object):
         :type num: int
         :rtype: bool
         """
+        if uglyFactor <= 0:
+            return False
         uglyFactor = (2,3,5)
         for i in uglyFactor:
             while num%i == 0:
