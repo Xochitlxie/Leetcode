@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: int
         """
         dp = [[1 for i in range(len(obstacleGrid))] for j in range(len(obstacleGrid[0]))]
-        for i in range(len(obstacleGrid))):
+        for i in range(len(obstacleGrid)):
             for j in range(len(obstacleGrid[0])):
                 if obstacleGrid[i][j] == 1:
                     dp[i][j] = 0
