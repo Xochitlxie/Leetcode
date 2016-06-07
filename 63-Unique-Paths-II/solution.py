@@ -20,3 +20,5 @@ class Solution(object):
                 if dp[i][j] != 0:
                     dp[i][j] = dp[i-1][j] + dp[i][j-1]
         return dp[-1][-1]
+        
+        #O(mn)
