@@ -4,7 +4,7 @@ class Solution(object):
         :type obstacleGrid: List[List[int]]
         :rtype: int
         """
-        dp = [[1 for i in range(len(obstacleGrid))] for j in range(len(obstacleGrid[0]))]
+        dp = [[1 for i in range(len(obstacleGrid[0]))] for j in range(len(obstacleGrid))]
         for i in range(len(obstacleGrid)):
             for j in range(len(obstacleGrid[0])):
                 if obstacleGrid[i][j] == 1:
