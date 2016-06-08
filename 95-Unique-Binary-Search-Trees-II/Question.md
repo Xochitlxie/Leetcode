@@ -1,8 +1,8 @@
 # 95. Unique Binary Search Trees II
 
-[Original Page](https://leetcode.com/problems/unique-binary-search-trees-ii/)
+[Original Page](https://leetcode.com/problems/unique-binary-search-trees-ii/#)
 
-Given _n_, generate all structurally unique **BST's** (binary search trees) that store values 1..._n_.
+Given an integer _n_, generate all structurally unique **BST's** (binary search trees) that store values 1..._n_.
 
 For example,  
 Given _n_ = 3, your program should return all 5 unique BST's shown below.
@@ -13,26 +13,6 @@ Given _n_ = 3, your program should return all 5 unique BST's shown below.
     /     /       \                 \
    2     1         2                 3
 </pre>
-
-confused what `"{1,#,2,3}"` means? [> read more on how binary tree is serialized on OJ.](#)
-
-<div class="spoilers" style="display: none;">  
-**OJ's Binary Tree Serialization:**
-
-The serialization of a binary tree follows a level order traversal, where '#' signifies a path terminator where no node exists below.
-
-Here's an example:  
-
-<pre>   1
-  / \
- 2   3
-    /
-   4
-    \
-     5
-</pre>
-
-The above binary tree is serialized as `"{1,2,3,#,#,4,#,#,5}"`.</div>
 
 <div>
 
