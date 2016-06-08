@@ -4,20 +4,21 @@ class NumMatrix(object):
         initialize your data structure here.
         :type matrix: List[List[int]]
         """
-        if not matrix or not matrix[0]:
+        if (not matrix) or (not matrix[0]):
             self.sum = []
-        m = len(matrix)
-        n = len(matrix[0])
-        dp = [[0 for i in range(n)] for j in range(m)]
-        dp[0][0] = matrix[0][0]
-        for i in range(1,n):
-            dp[0][i] = dp[0][i-1] + matrix[0][i]
-        for i in range(1,m):
-            dp[i][0] = dp[i-1][0] + matrix[i][0]
-        for i in range(1,m):
+        else:
+            m = len(matrix)
+            n = len(matrix[0])
+            dp = [[0 for i in range(n)] for j in range(m)]
+            dp[0][0] = matrix[0][0]
             for i in range(1,n):
-                dp[i][j] = dp[i-1][j] + dp[i][j-1]
-        self.sum = dp
+                dp[0][i] = dp[0][i-1] + matrix[0][i]
+            for i in range(1,m):
+                dp[i][0] = dp[i-1][0] + matrix[i][0]
+            for i in range(1,m):
+                for i in range(1,n):
+                    dp[i][j] = dp[i-1][j] + dp[i][j-1]
+            self.sum = dp
 
     def sumRegion(self, row1, col1, row2, col2):
         """
