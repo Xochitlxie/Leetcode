@@ -4,8 +4,8 @@ class NumMatrix(object):
         initialize your data structure here.
         :type matrix: List[List[int]]
         """
-        #if not matrix or not matrix[0]:
-            #self.sum == []
+        if not matrix or not matrix[0]:
+            self.sum = []
         m = len(matrix)
         n = len(matrix[0])
         dp = [[0 for i in range(n)] for j in range(m)]
@@ -28,6 +28,8 @@ class NumMatrix(object):
         :type col2: int
         :rtype: int
         """
+        if len(self.sum) == 0:
+            return 0
         if row1 == 0 and col1 == 0:
             return self.sum[row2][col2]
         elif row1 == 0:
