@@ -16,10 +16,8 @@ class NumMatrix(object):
             for i in range(1,m):
                 dp[i][0] = dp[i-1][0] + matrix[i][0]
             for i in range(1,m):
-                for i in range(1,n):
-                    print i
-                    print j
-                    dp[i][j] = dp[i-1][j] + dp[i][j-1]
+                for j in range(1,n):
+                    dp[i][j] = dp[i-1][j] + dp[i][j-1] - dp[i-1][j-1]
             self.sum = dp
 
     def sumRegion(self, row1, col1, row2, col2):
@@ -31,6 +29,7 @@ class NumMatrix(object):
         :type col2: int
         :rtype: int
         """
+        print self.sum
         if len(self.sum) == 0:
             return 0
         if row1 == 0 and col1 == 0:
