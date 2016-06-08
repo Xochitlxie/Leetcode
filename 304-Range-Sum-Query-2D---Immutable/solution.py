@@ -5,7 +5,7 @@ class NumMatrix(object):
         :type matrix: List[List[int]]
         """
         if not matrix or not matrix[0]:
-            return []
+            self.sum == []
         m = len(matrix)
         n = len(matrix[0])
         dp = [[0 for i in range(n)] for j in range(m)]
