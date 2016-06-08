@@ -35,7 +35,7 @@ class NumMatrix(object):
         elif col1 == 0:
             return self.sum[row2][col2] - self.sum[row1-1][col2]
         else:
-            return self.sum[row2][col2] - self.sum[row1-1][col2] - self.sum[row2][col1-1] + self.sum[row1-1][cow1-1]
+            return self.sum[row2][col2] - self.sum[row1-1][col2] - self.sum[row2][col1-1] + self.sum[row1-1][col1-1]
 
 # Your NumMatrix object will be instantiated and called as such:
 # numMatrix = NumMatrix(matrix)
