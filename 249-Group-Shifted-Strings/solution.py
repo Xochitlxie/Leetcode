@@ -11,7 +11,7 @@ class Solution(object):
                 dictionart[hs] = [str(i)]
             else:
                 self.insertStr(dictionary[hs],str(i)
-        return [dictionary[key] for key in dictionart.keys()]
+        return [dictionary[key] for key in dictionary.keys()]
         
         def strHash(self,astring):
             hslist = [(ord(i) - ord(asrting)[0]))%26 for i in astring]
