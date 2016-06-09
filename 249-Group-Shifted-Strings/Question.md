@@ -1,6 +1,6 @@
 # 249. Group Shifted Strings
 
-[Original Page](https://leetcode.com/problems/group-shifted-strings/)
+[Original Page](https://leetcode.com/problems/group-shifted-strings/?sort=hot)
 
 Given a string, we can "shift" each of its letter to its successive letter, for example: `"abc" -> "bcd"`. We can keep "shifting" which forms the sequence:
 
