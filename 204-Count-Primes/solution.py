@@ -1,9 +1,14 @@
-class Solution:
-        # @param {integer} n
-        # @return {integer}
-        def countPrimes(self, n):
-            primes=range(2,n)
-            for i in primes:
-                for j in xrange(i*i,n,i):
-                    primes[j-2]=0
-            return len(primes)-primes.count(0)
+class Solution(object):
+    def countPrimes(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        if n < 3:
+            return 0
+        primes = [True] * n
+        primes[0] = primes[1] = False
+        for i in range(2, int(n**0.5) + 1):
+            for j in range(i*i,n,i):
+                primes[j] = False
+        return sum(primes)
