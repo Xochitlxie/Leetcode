@@ -8,11 +8,20 @@ class Solution(object):
         for i in strings:
             hs = self.strHash(i)
             if hs not in dictionary.keys():
-                dictionart[hs] = [str(i)]
+                dictionary[hs] = [str(i)]
             else:
-                self.insertStr(dictionary[hs],str(i)
+                self.insertStr(dictionary[hs],str(i))
         return [dictionary[key] for key in dictionary.keys()]
-        
-        def strHash(self,astring):
-            hslist = [(ord(i) - ord(asrting)[0]))%26 for i in astring]
-            return tuple(hslist)
+
+    def strHash(self,astring):
+        hslist = [(ord(i)-ord(astring[0])) % 26 for i in astring]
+        return tuple(hslist)
+
+    def insertStr(self, alist, astring):
+        i = 0
+        while i < len(alist) and ord(astring[0]) > ord(alist[i][0]):
+            i += 1
+        if i == len(alist):
+            alist.append(astring)
+        else:
+            alist[:] = alist[0:i] + [astring] + alist[i:]
