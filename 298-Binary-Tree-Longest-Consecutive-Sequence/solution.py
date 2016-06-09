@@ -12,9 +12,10 @@ class Solution(object):
         :rtype: int
         """
         count = []
-        if not root:
+        if root:
             self.dfs(root,1,count)
         maxLen = 0
+        print count
         for i in count:
             maxLen = max(maxLen,i)
         return maxLen
@@ -27,10 +28,12 @@ class Solution(object):
             if root.left.val == root.val + 1:
                 self.dfs(root.left,length+1,count)
             else:
+                count.append(length)
                 self.dfs(root.left,1,count)
         if root.right:
             if root.right.val == root.val + 1:
                 self.dfs(root.right,length+1,count)
             else:
+                count.append(length)
                 self.dfs(root.right,1,count)
         
