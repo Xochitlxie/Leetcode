@@ -7,7 +7,7 @@ class Solution(object):
         dictionary = {}
         for i in strings:
             hs = self.strHash(i)
-            if hs not in dictionart.keys():
+            if hs not in dictionary.keys():
                 dictionart[hs] = [str(i)]
             else:
                 self.insertStr(dictionary[hs],str(i)
