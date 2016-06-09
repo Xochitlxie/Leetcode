@@ -18,9 +18,9 @@ You should return the following matrix:
 
 <div>
 
-<div id="tags" class="btn btn-xs btn-warning">Hide Tags</div>
+<div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
 
-<span class="hidebutton" style="display: inline; opacity: 0.70814;">[Array](/tag/array/)</span></div>
+<span class="hidebutton">[Array](/tag/array/)</span></div>
 
 <div>
 
