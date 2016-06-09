@@ -22,7 +22,7 @@ class Solution(object):
             return
         if root.left:
             if root.left.val == root.val + 1:
-                self.dfs(root.left,length+1,maxLen[0])
+                self.dfs(root.left,length+1,maxLen)
             else:
                 maxLen[0] = max(maxLen[0],length)
                 self.dfs(root.left,1,maxLen)
