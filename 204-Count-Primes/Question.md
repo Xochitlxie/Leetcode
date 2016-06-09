@@ -1,6 +1,6 @@
 # 204. Count Primes
 
-[Original Page](https://leetcode.com/problems/count-primes/)
+[Original Page](https://leetcode.com/problems/count-primes/?sort=hot)
 
 **Description:**
 
