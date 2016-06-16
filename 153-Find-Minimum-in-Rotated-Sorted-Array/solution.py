@@ -10,6 +10,8 @@ class Solution(object):
             m = i + (j - i) / 2
             if nums[m] > nums[j]:
                 i = m + 1
-            else:
+            elif nums[m] < nums[j]:
                 j = m
+            else:
+                j -= 1
         return nums[i]
