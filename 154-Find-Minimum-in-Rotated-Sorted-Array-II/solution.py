@@ -8,8 +8,10 @@ class Solution(object):
         j = len(nums) - 1
         while i<j:
             m = i + (j-i)/2
-            if num[m] > num[j]:
+            if nums[m] > nums[j]:
                 i = m+1
-            else:
+            elif nums[m] < nums[j]:
                 j = m
-        return num[i]
+            else:
+                j -= 1
+        return nums[i]
