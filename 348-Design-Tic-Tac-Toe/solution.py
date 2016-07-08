@@ -6,9 +6,9 @@ class TicTacToe(object):
         :type n: int
         """
         count = collections.Counter()
-        self.move = move
+        
             
-    def move(self, row, col, player):
+        def move(self, row, col, player):
         """
         Player {player} makes a move at ({row}, {col}).
         @param row The row of the board.
@@ -23,13 +23,12 @@ class TicTacToe(object):
         :type player: int
         :rtype: int
         """
-        for i, x in enumerate((row, col, row+col, row-col)):
-            count[i, x, player] += 1
-            if count[i, x, player] == n:
-                return player
-        return 0
-        
-
+            for i, x in enumerate((row, col, row+col, row-col)):
+                count[i, x, player] += 1
+                if count[i, x, player] == n:
+                    return player
+            return 0
+        self.move = move
 
 # Your TicTacToe object will be instantiated and called as such:
 # obj = TicTacToe(n)
