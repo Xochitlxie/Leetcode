@@ -8,7 +8,7 @@ class TicTacToe(object):
         count = collections.Counter()
         
             
-        def move(self, row, col, player):
+        def move(row, col, player):
             """
             Player {player} makes a move at ({row}, {col}).
             @param row The row of the board.
