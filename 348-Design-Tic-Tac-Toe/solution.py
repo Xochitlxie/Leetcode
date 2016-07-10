@@ -8,7 +8,7 @@ class TicTacToe(object):
         rows = [0 * n]
         cols = [0 * n]
         diagonal = 0
-        anti-diagonal = 0
+        antiDiagonal = 0
         n = n
         
     def move(row, col, player):
@@ -38,9 +38,9 @@ class TicTacToe(object):
         if row == col:
             diagonal += add
         elif row == self.n - 1 - col:
-            anti-diagonal += add
+            antiDiagonal += add
         
-        if (abs(self.rows[row]) == self.n or abs(self.cols[col]) == self.n or abs(diagonal) == self.n or abs(anti-diagonal) == self.n):
+        if (abs(self.rows[row]) == self.n or abs(self.cols[col]) == self.n or abs(diagonal) == self.n or abs(antiDiagonal) == self.n):
             return player
         
 # Your TicTacToe object will be instantiated and called as such:
