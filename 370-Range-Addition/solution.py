@@ -5,15 +5,11 @@ class Solution(object):
         :type updates: List[List[int]]
         :rtype: List[int]
         """
-        for update in updates:
-            start = update[0]
-            end = update[1]
-            value = update[2]
-        
         result = [0] * length
-        result[start] += value
-        if (end < length - 1):
-            result[end + 1] -= value
+        for update in updates:
+            result[update[0]] += update[2]
+            if (update[1] < length - 1):
+                result[update[1] + 1] -= update[2]
         
         sum = 0
         for i in range(len(result)):
