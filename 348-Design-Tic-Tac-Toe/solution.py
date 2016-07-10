@@ -5,8 +5,8 @@ class TicTacToe(object):
         Initialize your data structure here.
         :type n: int
         """
-        self.rows = [0 * n]
-        self.cols = [0 * n]
+        self.rows = [0] * n
+        self.cols = [0] * n
         self.diagonal = 0
         self.antiDiagonal = 0
         self.n = n
@@ -37,11 +37,14 @@ class TicTacToe(object):
         
         if row == col:
             self.diagonal += add
-        elif row == self.n - 1 - col:
+        if col == self.n - 1 - row:
             self.antiDiagonal += add
+
         
         if (abs(self.rows[row]) == self.n or abs(self.cols[col]) == self.n or abs(self.diagonal) == self.n or abs(self.antiDiagonal) == self.n):
             return player
+        else:
+            return 0
         
 # Your TicTacToe object will be instantiated and called as such:
 # obj = TicTacToe(n)
