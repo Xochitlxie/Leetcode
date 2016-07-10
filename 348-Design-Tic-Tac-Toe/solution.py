@@ -11,7 +11,7 @@ class TicTacToe(object):
         antiDiagonal = 0
         n = n
         
-    def move(row, col, player):
+    def move(self, row, col, player):
         """
         Player {player} makes a move at ({row}, {col}).
         @param row The row of the board.
