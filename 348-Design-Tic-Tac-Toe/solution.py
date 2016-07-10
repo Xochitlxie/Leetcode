@@ -40,7 +40,7 @@ class TicTacToe(object):
         elif row == self.n - 1 - col:
             anti-diagonal += add
         
-        if (abs(self.rows[row]) == self.n or abs(self.cols[col] == self.n or abs(diagonal) == self.n or abs(anti-diagonal)== self.n)
+        if (abs(self.rows[row]) == self.n or abs(self.cols[col] == self.n or abs(diagonal) == self.n or abs(anti-diagonal)== self.n):
             return player
         
 # Your TicTacToe object will be instantiated and called as such:
