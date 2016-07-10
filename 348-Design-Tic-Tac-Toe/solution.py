@@ -5,11 +5,11 @@ class TicTacToe(object):
         Initialize your data structure here.
         :type n: int
         """
-        rows = [0 * n]
-        cols = [0 * n]
-        diagonal = 0
-        antiDiagonal = 0
-        n = n
+        self.rows = [0 * n]
+        self.cols = [0 * n]
+        self.diagonal = 0
+        self.antiDiagonal = 0
+        self.n = n
         
     def move(self, row, col, player):
         """
