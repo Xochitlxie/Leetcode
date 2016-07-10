@@ -36,9 +36,9 @@ class TicTacToe(object):
         self.cols[col] += add
         
         if row == col:
-            diagonal += add
+            self.diagonal += add
         elif row == self.n - 1 - col:
-            antiDiagonal += add
+            self.antiDiagonal += add
         
         if (abs(self.rows[row]) == self.n or abs(self.cols[col]) == self.n or abs(diagonal) == self.n or abs(antiDiagonal) == self.n):
             return player
