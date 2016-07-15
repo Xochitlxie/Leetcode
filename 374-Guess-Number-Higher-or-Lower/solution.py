@@ -9,14 +9,5 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        print guess(n-1)
-        return self.guessSearch(1,n)
-        
-    def guessSearch(self,start,end):
-        mid = start + (end-start)/2
-        if guess(mid) == 0:
-            return mid
-        elif guess(mid) == 1:
-            return self.guessSearch(start,mid)
-        else:
-            return self.guessSearch(mid+1,end)
+        class C: __getitem__ = lambda _, i: -guess(i)
+        return bisect.bisect(C(), -1, 1, n)
