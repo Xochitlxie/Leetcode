@@ -9,6 +9,7 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
+        print guess(n-1)
         return self.guessSearch(1,n)
         
     def guessSearch(self,start,end):
