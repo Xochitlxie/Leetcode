@@ -12,5 +12,6 @@ class Solution(object):
         lo,hi = 1,n
         while lo < hi:
             mid = lo + (hi-lo)/2
+            print mid,guess(mid)
             lo,hi = ((mid,mid),(mid+1,hi),(lo,mid-1))[guess(mid)]
         return lo
