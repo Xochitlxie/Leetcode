@@ -10,7 +10,7 @@ class Solution(object):
         :rtype: int
         """
         lo,hi = 1,n
-        if lo < hi:
+        while lo < hi:
             mid = lo + (hi-lo)/2
-            lo,hi = ((mid,mid),(lo,mid),(mid+1,end))[guess(mid)]
+            lo,hi = ((mid,mid),(mid+1,hi),(lo,mid-1))[guess(mid)]
         return lo
