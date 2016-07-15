@@ -9,5 +9,8 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        class C: __getitem__ = lambda _, i: -guess(i)
-        return bisect.bisect(C(), -1, 1, n)
+        lo,hi = 1,n
+        if lo < hi:
+            mid = lo + (hi-lo)/2
+            lo,hi = ((mid,mid),(lo,mid),(mid+1,end))[guess(mid)]
+        return lo
