@@ -31,7 +31,7 @@ class HitCounter(object):
         :rtype: int
         """
         while self.count and self.times[0] <= timestamp - 300:
-            self.count -= self.map[self.time[0]]
+            self.count -= self.map[self.times[0]]
             self.times.popleft()
         return self.count
         
