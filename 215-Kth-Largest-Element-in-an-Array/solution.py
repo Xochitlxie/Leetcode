@@ -6,6 +6,5 @@ class Solution(object):
         :rtype: int
         """
         heap = []
-        heapq.heapify(nums)
         topK = heapq.nlargest(k,nums)
         return topK[-1]
