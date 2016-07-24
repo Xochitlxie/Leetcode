@@ -6,8 +6,6 @@ class Solution(object):
         :rtype: int
         """
         heap = []
-        for num in nums:
-            heapq.heappush(heap, num)
-        for _ in xrange(len(nums)-k):
-            heapq.heappop(heap)
-        return heapq.heappop(heap)
+        heapq.heapify(nums)
+        topK = heapq.nlargest(k,nums)
+        return topK[-1]
