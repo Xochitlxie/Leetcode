@@ -5,6 +5,5 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        heap = []
         topK = heapq.nlargest(k,nums)
         return topK[-1]
