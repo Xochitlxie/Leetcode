@@ -6,7 +6,7 @@ class Solution(object):
         :type k: int
         :rtype: List[int]
         """
-        most_item = Counter(nums).most_commin(k)
+        most_item = Counter(nums).most_common(k)
         result = []
         for i in most_item:
             result.append(i[0])
