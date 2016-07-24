@@ -6,7 +6,7 @@ class Solution(object):
         :rtype: int
         """
         # convert the kth largest to smallest
-    return self.findKthSmallest(nums, len(nums)+1-k)
+        return self.findKthSmallest(nums, len(nums)+1-k)
     
     def findKthSmallest(self, nums, k):
         if nums:
