@@ -6,25 +6,37 @@ class Solution(object):
         :rtype: int
         """
         # convert the kth largest to smallest
-        return self.findKthSmallest(nums, len(nums)+1-k)
-    
-    def findKthSmallest(self, nums, k):
-        if nums:
-            pos = self.partition(nums, 0, len(nums)-1)
-            if k > pos+1:
-                return self.findKthSmallest(nums[pos+1:], k-pos-1)
-            elif k < pos+1:
-                return self.findKthSmallest(nums[:pos], k)
+        return self.quickSelect(nums, 0, len(nums) -1, k)
+        
+    def quickSelect(self, array, low, high, k):
+        i = low
+        j = high - 1
+        pivot = array[high]
+        
+        while i <= j:
+            if array[i] > pivot:
+                array[i], array[j] = array[j], array[i]
+                j -= 1
             else:
-                return nums[pos]
- 
-    # choose the right-most element as pivot   
-    def partition(self, nums, l, r):
-        low = l
-        while l < r:
-            if nums[l] < nums[r]:
-                nums[l], nums[low] = nums[low], nums[l]
-                low += 1
-            l += 1
-        nums[low], nums[r] = nums[r], nums[low]
-        return low
+                i += 1
+            
+        array[i], array[high] = array[high], array[i]
+        
+        """
+              j i
+              | |
+              V V        
+        1 3 2 4 6 9 12 7
+        ^       ^      ^
+        |       |      |
+       low    pivot   high
+       
+        So there are high - i numbers larger than pivot.
+        """
+        
+        if high - i == k - 1:
+            return pivot
+        elif high - i < k - 1:
+            return self.quickSelect(array, low, i-1, k - (high - i + 1))
+        else:
+            return self.quickSelect(array, i, high, k)
