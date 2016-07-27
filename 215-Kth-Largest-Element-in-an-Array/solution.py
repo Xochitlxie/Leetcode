@@ -10,7 +10,7 @@ class Solution(object):
         
     def quickSelect(self, array, low, high, k):
         i = low
-        j = high
+        j = high - 1
         pivot = array[high]
         
         while i <= j:
