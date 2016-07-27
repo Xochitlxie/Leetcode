@@ -9,7 +9,7 @@ class Solution(object):
         numLen = k
         frequency = {}
         for num in nums:
-            frequency[num] = frequenct.get(num,0) + 1
+            frequency[num] = frequency.get(num,0) + 1
         
         bucket = [None] * (len(nums)+1)
         for (num,freq) in frequency.items():
