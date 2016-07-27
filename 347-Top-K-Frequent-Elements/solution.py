@@ -6,7 +6,7 @@ class Solution(object):
         :type k: int
         :rtype: List[int]
         """
-        len = k
+        lenOfK = k
         frequency = {}
         for num in nums:
             frequency[num] = frequency.get(num, 0) + 1
@@ -26,5 +26,5 @@ class Solution(object):
             else:
                 break
             
-        return result[0:len]
+        return result[0:lenOfK]
     
