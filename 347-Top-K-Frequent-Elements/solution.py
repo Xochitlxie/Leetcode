@@ -6,25 +6,24 @@ class Solution(object):
         :type k: int
         :rtype: List[int]
         """
-        lenOfK = k
+        numLen = k
         frequency = {}
         for num in nums:
-            frequency[num] = frequency.get(num, 0) + 1
+            frequency[num] = frequenct.get(num,0) + 1
         
-        bucket = [None] * (len(nums) + 1)
-        for (num, freq) in frequency.items():
+        bucket = [None] * (len(nums)+1)
+        for (num,freq) in frequency.items():
             if bucket[freq] == None:
                 bucket[freq] = []
             bucket[freq].append(num)
         
         result = []
-        for i in reversed(range(len(nums) + 1)):
+        for i reversed(range(len(nums)+1)):
             if k > 0:
-                if bucket[i] is not None:
+                if bucket[i] != None:
                     result.extend(bucket[i])
-                    k -= len(bucket[i])
+                    k -= 1
             else:
                 break
-            
-        return result[0:lenOfK]
-    
+        
+        return result[0:numLen]
