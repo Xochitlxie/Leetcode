@@ -18,7 +18,7 @@ class Solution(object):
             bucket[freq].append(num)
         
         result = []
-        for i reversed(range(len(nums)+1)):
+        for i reversed(range(len(nums) + 1)):
             if k > 0:
                 if bucket[i] != None:
                     result.extend(bucket[i])
