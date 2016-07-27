@@ -22,7 +22,7 @@ class Solution(object):
             if k > 0:
                 if bucket[i] != None:
                     result.extend(bucket[i])
-                    k -= 1
+                    k -= len(bucket[i])
             else:
                 break
         
