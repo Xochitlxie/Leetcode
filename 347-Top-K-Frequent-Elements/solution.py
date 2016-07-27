@@ -25,5 +25,5 @@ class Solution(object):
             else:
                 break
             
-        return result
+        return result[0:k]
     
