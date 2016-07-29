@@ -6,7 +6,7 @@ class ZigzagIterator(object):
         :type v1: List[int]
         :type v2: List[int]
         """
-        self.queue=[v1,v2]
+        self.queue=[_ for _ in (v1,v2) if _ ]
    
     def next(self):
         """
