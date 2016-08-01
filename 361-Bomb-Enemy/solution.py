@@ -12,7 +12,7 @@ class Solution(object):
            for j, cell in enumerate(row):
                 if j == 0 or row[j-1] == 'W':
                     rowhits = 0
-                   k = j
+                    k = j
                     while k < n and row[k] != 'W':
                         rowhits += row[k] == 'E'
                         k += 1
