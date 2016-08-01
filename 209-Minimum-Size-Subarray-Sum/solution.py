@@ -7,15 +7,15 @@ class Solution(object):
         """
         if len(nums) == 0:
             return 0
-        i,j,sum,min = 0,0,0,sys.maxint
+        i,j,sum,minNum = 0,0,0,sys.maxint
         while j < len(nums):
             sum += nums[j]
             j += 1
             while sum > s:
-                min = min(min,j-i)
+                minNum = min (minNum,j-i)
                 sum -= a[i]
                 i += 1
-        if min == sys.maxint:
+        if minNum == sys.maxint:
             return 0
         else:
-            return min
+            return minNum
