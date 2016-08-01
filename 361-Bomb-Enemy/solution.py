@@ -24,5 +24,5 @@ class Solution(object):
                         k += 1
                 if cell == '0':
                     result = max(result, rowhits + colhits[j])
-            return result
+        return result
         
