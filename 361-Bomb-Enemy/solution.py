@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: int
         """
         if not grid: return 0
-            m, n = len(grid), len(grid[0])
+        m, n = len(grid), len(grid[0])
         result = 0
         colhits = [0] * n
         for i, row in enumerate(grid):
