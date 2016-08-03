@@ -34,4 +34,4 @@ sumRange(0, 5) -> -3
 
 <div id="similar" class="btn btn-xs btn-warning">Show Similar Problems</div>
 
-<span class="hidebutton">[(M) Range Sum Query 2D - Immutable](/problems/range-sum-query-2d-immutable/) [(M) Range Sum Query - Mutable](/problems/range-sum-query-mutable/) [(E) Maximum Size Subarray Sum Equals k](/problems/maximum-size-subarray-sum-equals-k/)</span></div>
+<span class="hidebutton">[(M) Range Sum Query 2D - Immutable](/problems/range-sum-query-2d-immutable/) [(M) Range Sum Query - Mutable](/problems/range-sum-query-mutable/) [(M) Maximum Size Subarray Sum Equals k](/problems/maximum-size-subarray-sum-equals-k/)</span></div>
