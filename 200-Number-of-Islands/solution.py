@@ -18,7 +18,7 @@ class Solution(object):
         return count
                 
     def dfsMarker(self,grid,i,j):
-        if i < 0 or j < 0 or i >= n or j >= m or grid[i][j] != "1":
+        if i < 0 or j < 0 or i >= len(grid) or j >= len(grid[0]) or grid[i][j] != "1":
             return
         grid[i][j] = "0"
         self.dfsMarker(grid,i+1,j)
