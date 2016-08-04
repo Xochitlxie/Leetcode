@@ -4,7 +4,6 @@ class Solution(object):
         :type grid: List[List[str]]
         :rtype: int
         """
-        dirs = [(0,1),(0,-1),(1,0),(-1,0)]
         count = 0
         n = len(grid)
         if not n:
