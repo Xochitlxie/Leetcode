@@ -5,15 +5,20 @@ class Solution(object):
         :type edges: List[List[int]]
         :rtype: int
         """
-        count = 0
-        checkSet = set()
-        for edge in edges:
-            if edge[0] not in checkSet and edge[1] not in checkSet():
-                count += 1
+        def find(x):
+            if parent[x] != x:
+                parent[x] = find(parent[x])
+            return parent[x]
+            
+        def union(xy):
+            x, y = map(find, xy)
+            if rank[x] < rank[y]:
+                parent[x] = y
             else:
-                checkSet.add(edge[0])
-                checkSet.add(edge[1])
-        for i in xrange(n):
-            if i not in checkSet:
-                count += 1
-        return count
+                parent[y] = x
+                if rank[x] == rank[y]:
+                    rank[x] += 1
+        
+        parent, rank = range(n), [0] * n
+        map(union, edges)
+        return len({find(x) for x in parent})
