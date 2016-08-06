@@ -5,22 +5,15 @@ class Solution(object):
         :type edges: List[List[int]]
         :rtype: int
         """
-        def dfs(n,g,visited):
-            if visited[n]:
-                return
-            visited[n] = 1
-            for x in g[n]:
-                dfs(x,g,visited)
-                
-        visited = [0] * n
-        g = {x:[] for x in xrange(n)}
-        for x,y in edges:
-            g[x].append(y)
-            g[y].append(x)
-        
-        ret = 0
+        count = 0
+        checkSet = set()
+        for edge in edges:
+            if edge[0] not in checkSet and edge[1] not in checkSet():
+                count += 1
+            else:
+                checkSet.add(edge[0])
+                checkSet.add(edge[1])
         for i in xrange(n):
-            if not visited[i]:
-                dfs(i,g,visited)
-                ret += 1
-        return ret
+            if i not in checkSet:
+                count += 1
+        return count
