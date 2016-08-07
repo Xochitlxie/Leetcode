@@ -15,23 +15,21 @@ class Solution(object):
         i = dummy
         j = dummy
         
-        while j.next != None:
-            j = j.next
-            if j.val != 9:
-                i = j
-        
-        if j.val != 9:
-            j.val += 1
-        else:
-            i.val += 1
+        while i.next != None:
             i = i.next
-            while i!= None:
-                i.val = 0
-                i = i.next
-                
-        if dummy.val == 0:
+            if i.val != 9:
+                j = i
+        
+        if i.val != 9:
+            i.val += 1
+        else:
+            j.val += 1
+            j = j.next
+            while j != None:
+                j.val = 0
+                j = j.next
+        
+        if dummy.val != 0:
+            return dummy
+        else:
             return dummy.next
-        return dummy
-        
-        
-        
