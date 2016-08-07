@@ -11,8 +11,8 @@ class Solution(object):
             p[x] = find(p[x])
         return p[x]
     
-        for e in edges:
-            v, w = map(find, e)
-            p[v] = w
-            n -= v != w
-        return n
+    for e in edges:
+        v, w = map(find, e)
+        p[v] = w
+        n -= v != w
+    return n
