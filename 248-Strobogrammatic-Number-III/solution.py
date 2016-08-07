@@ -18,7 +18,7 @@ class Solution(object):
                 if len(c) != 1 and c[0] == 0:
                     continue
                 if left < right or (left == right and p[0] == p[1]):
-                    dfs(low,hign,c,left+1,right-1)
+                    dfs(low,high,c,left+1,right-1)
         count = 0
         pairs = ["00","11","69","88","96"]
         for i in range(len(low),len(high)+1):
