@@ -1,6 +1,7 @@
 class Solution(object):
     count = 0
     pairs = ["00","11","69","88","96"]
+    
     def strobogrammaticInRange(self, low, high):
         """
         :type low: str
@@ -21,7 +22,7 @@ class Solution(object):
         for p in self.pairs:
             c[left] = p[0]
             c[right] = p[1]
-            if len(c) != 1 and c[0] == 0:
+            if len(c) != 1 and c[0] == "0":
                 continue
             if left < right or (left == right and p[0] == p[1]):
-                self.dfs(low,high,c,left+1,right-1,pairs)
+                self.dfs(low,high,c,left+1,right-1)
