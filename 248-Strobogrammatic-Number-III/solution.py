@@ -11,7 +11,7 @@ class Solution(object):
             self.dfs(low,high,["0"]*i,0,i-1)
         return count
         
-    def dfs(self.low,high,c,left,right):
+    def dfs(self,low,high,c,left,right):
         if left > right:
             s = "".join(c)
             if (len(s) == len(low) and int(s) < int(low)) or (len(s) == len(high) and int(s) > int(high)):
