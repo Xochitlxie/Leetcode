@@ -6,7 +6,7 @@ class PhoneDirectory(object):
         @param maxNumbers - The maximum numbers that can be stored in the phone directory.
         :type maxNumbers: int
         """
-        self.numPool = set(range(maxNumbers)
+        self.numPool = set(range(maxNumbers))
         
     def get(self):
         """
@@ -18,7 +18,6 @@ class PhoneDirectory(object):
             return -1
         else:
             return self.numPool.pop()
-    
 
     def check(self, number):
         """
