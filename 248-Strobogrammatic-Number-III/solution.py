@@ -7,8 +7,8 @@ class Solution(object):
         """
         count = 0
         pairs = ["00","11","69","88","96"]
-        for i in range(len(low),len(high)+1,pairs):
-            self.dfs(low,high,["0"]*i,0,i-1)
+        for i in range(len(low),len(high)+1):
+            self.dfs(low,high,["0"]*i,0,i-1,pairs)
         return count
         
     def dfs(self,low,high,c,left,right,pairs):
