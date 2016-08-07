@@ -40,7 +40,7 @@ class RandomizedSet(object):
         Get a random element from the set.
         :rtype: int
         """
-        return self.pos[random.randint(0,len(self.nums)-1)]
+        return self.nums[random.randint(0,len(self.nums)-1)]
         
 
 
