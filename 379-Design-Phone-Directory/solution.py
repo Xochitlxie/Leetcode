@@ -8,7 +8,6 @@ class PhoneDirectory(object):
         """
         self.numPool = set(range(maxNumbers)
         
-
     def get(self):
         """
         Provide a number which is not assigned to anyone.
