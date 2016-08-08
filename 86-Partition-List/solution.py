@@ -12,7 +12,7 @@ class Solution(object):
         :rtype: ListNode
         """
         newHead = small = ListNode("small")
-        LargerHead = larger = ListNode("large")
+        largerHead = larger = ListNode("large")
         if not head:
             return head
         while head != None:
