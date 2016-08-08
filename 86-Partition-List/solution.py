@@ -11,10 +11,8 @@ class Solution(object):
         :type x: int
         :rtype: ListNode
         """
-        small = ListNode("s")
-        larger = ListNode("l")
-        newHead = small
-        lHead = larger
+        newHead = small = ListNode("small")
+        LargerHead = larger = ListNode("large")
         if not head:
             return head
         while head != None:
@@ -26,5 +24,5 @@ class Solution(object):
                 larger = larger.next
             head = head.next
         larger.next = None
-        small.next = lHead.next
+        small.next = largerHead.next
         return newHead.next
