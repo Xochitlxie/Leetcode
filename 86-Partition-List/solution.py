@@ -12,7 +12,7 @@ class Solution(object):
         :rtype: ListNode
         """
         small = ListNode("s")
-        larger = listNode("l")
+        larger = ListNode("l")
         newHead = small
         lHead = larger
         if not head:
@@ -21,11 +21,10 @@ class Solution(object):
             if head.val < x:
                 small.next = head
                 small = small.next
-                small.next = None
             else:
                 larger.next = head
                 larger = larger.next
-                larger.next = None
             head = head.next
+        larger.next = None
         small.next = lHead.next
         return newHead.next
