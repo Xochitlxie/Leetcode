@@ -10,12 +10,10 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        return self.helper(head,None)
-    
-    def helper(self,head,prev):
-        if head == None:
-            return prev
-        cur = head
-        head = head.next
-        cur.next = prev
-        return self.helper(head,cur)
+        prev = None
+        while head != None:
+            cur = head
+            head = head.next
+            cur.next = prev
+            prev = cur
+        return prev
