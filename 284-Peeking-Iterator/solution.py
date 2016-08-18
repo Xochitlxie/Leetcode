@@ -26,7 +26,7 @@ class PeekingIterator(object):
         :type iterator: Iterator
         """
         self.iter = iterator
-        self.iter.hasNext():
+        if self.iter.hasNext():
             self.temp = self.iter.next()
         else:
             self.temp = None
