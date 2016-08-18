@@ -4,14 +4,14 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        major,count = nums[0],1
-        for i in range(0,len(nums)):
+        major = nums[0]
+        count = 1
+        for i in xrange(1,len(nums)):
             if count == 0:
                 count += 1
                 major = nums[i]
-            else if major == nums[i]:
+            elif major == nums[i]:
                 count += 1
             else:
                 count -= 1
         return major
-        
