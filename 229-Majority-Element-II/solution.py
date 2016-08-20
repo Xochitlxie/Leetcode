@@ -27,9 +27,9 @@ class Solution(object):
                 result1 += 1
             elif n== cand2:
                 result2 += 1
-        if result1 > len(n)/3:
+        if result1 > len(nums)/3:
             result.append(cand1)
-        if result2 > len(n)/3:
+        if result2 > len(nums)/3:
             result.append(cand2)
         return result
             
