@@ -19,7 +19,7 @@ class Solution(object):
                 cand2,count2 = n, 1
             else:
                 count1 -= 1
-                count 2-= 1
+                count2 -= 1
         result1 = 0
         result2 = 0
         for n in nums:
