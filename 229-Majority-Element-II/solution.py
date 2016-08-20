@@ -3,7 +3,7 @@ class Solution(object):
         """
         :type nums: List[int]
         :rtype: List[int]
-        """ 
+        """
         result = []
         if not nums:
             return result
@@ -32,4 +32,3 @@ class Solution(object):
         if result2 > len(nums)/3:
             result.append(cand2)
         return result
-            
