@@ -14,8 +14,8 @@ class Solution(object):
             else:
                 counter[i] = i
         for i in range(len(nums)):
-            if nums[i] in acceptNumber:
-                if counter[i] != len(nums)-i-1:
+            if num[i] in acceptNumber:
+                if counter[i] != len(num)-i-1:
                     return False
             else:
                 return False
