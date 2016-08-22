@@ -7,12 +7,12 @@ class Solution(object):
         acceptNumber = ["1","6","9","8","0"]
         counter = {}
         for i in acceptNumber:
-            if c=="6":
-                counter[c] == "9"
-            elif c== "9":
-                counter[c] == "6"
+            if i == "6":
+                counter[i] == "9"
+            elif i== "9":
+                counter[i] == "6"
             else:
-                counter[c] == c
+                counter[i] == i
         for i in range(len(nums)):
             if nums[i] in acceptNumber:
                 if counter[i] != len(nums)-i-1:
