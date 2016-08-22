@@ -15,18 +15,18 @@ A valid Sudoku board (partially filled) is not necessarily solvable. Only the fi
 
 <div>
 
-<div id="company_tags" class="btn btn-xs btn-warning">Hide Company Tags</div>
+<div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
 
-<span class="hidebutton" style="display: inline;">[Snapchat](/company/snapchat/) [Uber](/company/uber/) [Apple](/company/apple/)</span></div>
-
-<div>
-
-<div id="tags" class="btn btn-xs btn-warning">Hide Tags</div>
-
-<span class="hidebutton" style="display: inline;">[Hash Table](/tag/hash-table/)</span></div>
+<span class="hidebutton">[Snapchat](/company/snapchat/) [Uber](/company/uber/) [Apple](/company/apple/)</span></div>
 
 <div>
 
-<div id="similar" class="btn btn-xs btn-warning">Hide Similar Problems</div>
+<div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
 
-<span class="hidebutton" style="display: inline;">[(H) Sudoku Solver](/problems/sudoku-solver/)</span></div>
+<span class="hidebutton">[Hash Table](/tag/hash-table/)</span></div>
+
+<div>
+
+<div id="similar" class="btn btn-xs btn-warning">Show Similar Problems</div>
+
+<span class="hidebutton">[(H) Sudoku Solver](/problems/sudoku-solver/)</span></div>
