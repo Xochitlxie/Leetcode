@@ -4,4 +4,4 @@ class Solution(object):
         :type num: int
         :rtype: bool
         """
-        return num != 0 and num &(num-1) == 0 and num & 1431655765== num
+        return num != 0 and num &(num-1) == 0 and num & int("1010101010101010101010101010101",2)== num
