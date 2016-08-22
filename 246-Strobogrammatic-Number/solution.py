@@ -8,11 +8,11 @@ class Solution(object):
         counter = {}
         for i in acceptNumber:
             if i == "6":
-                counter[i] == "9"
+                counter[i] = "9"
             elif i== "9":
-                counter[i] == "6"
+                counter[i] = "6"
             else:
-                counter[i] == i
+                counter[i] = i
         for i in range(len(nums)):
             if nums[i] in acceptNumber:
                 if counter[i] != len(nums)-i-1:
