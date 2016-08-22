@@ -5,4 +5,7 @@ class Solution(object):
         :rtype: int
         """
         count = 0
-        return self.hammingWeight(n & n-1, count+1) if n!=0 else count 
+        while n != 0:
+            count += 1
+            n = n & (n-1)
+        return count
