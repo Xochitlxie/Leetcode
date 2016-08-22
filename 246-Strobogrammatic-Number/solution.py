@@ -13,7 +13,7 @@ class Solution(object):
                 counter[i] = "6"
             else:
                 counter[i] = i
-        for i in range(len(nums)):
+        for i in range(len(num)):
             if num[i] in acceptNumber:
                 if counter[i] != len(num)-i-1:
                     return False
