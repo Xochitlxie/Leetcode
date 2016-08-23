@@ -8,7 +8,7 @@ class Solution(object):
         dict = {}
         for i in magazine:
             dict[i] = dict.get(i,0) + 1
-        for j in ransonNote:
+        for j in ransomNote:
             if j in dict.keys():
                 dict[j] -= 1
                 if dict[j] < 0:
