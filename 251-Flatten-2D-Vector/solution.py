@@ -5,7 +5,7 @@ class Vector2D(object):
         Initialize your data structure here.
         :type vec2d: List[List[int]]
         """
-        self.i = self.j = 0
+        self.i, self.j = 0,0
         self.vec2d = vec2d
 
     def next(self):
