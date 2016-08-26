@@ -13,14 +13,21 @@ class Vector2D(object):
         :rtype: int
         """
         ret = self.vec2d[self.i][self.j]
-        if self.vec2d.hasNext():
+        if self.j == len(self.vec2d[self.i]) - 1:
+            self.i += 1
+            if self.i <= len(self.vec2d)-1:
+                while not self.vec2d[self.i]:
+                    self.i += 1
+            self.j = 0
+        else:
+            self.j += 1
             
 
     def hasNext(self):
         """
         :rtype: bool
         """
-        if self.i >=  len(self.vec2d)-1 or self.j == len(self.vec2d[self.i])-1:
+        if self.i >  len(self.vec2d)-1:
             return False
         else:
             return True
