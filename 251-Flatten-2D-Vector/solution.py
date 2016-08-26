@@ -21,7 +21,7 @@ class Vector2D(object):
         :rtype: bool
         """
         while self.i < len(self.vec):
-            if self.col < len(self.vec[self.i]):
+            if self.j < len(self.vec[self.i]):
                 return True
             self.j = 0
             self.i += 1
