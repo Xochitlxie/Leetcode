@@ -6,31 +6,26 @@ class Vector2D(object):
         :type vec2d: List[List[int]]
         """
         self.i, self.j = 0,0
-        self.vec2d = vec2d
+        self.vec = vec2d
 
     def next(self):
         """
         :rtype: int
         """
-        ret = self.vec2d[self.i][self.j]
-        if self.j == len(self.vec2d[self.i]) - 1:
-            self.i += 1
-            if self.i <= len(self.vec2d)-1:
-                while not self.vec2d[self.i]:
-                    self.i += 1
-            self.j = 0
-        elif self.j < len(self.vec2d[self.i]) - 1:
-            self.j += 1
+        ret = self.vec[self.i][self.j]
+        self.j += 1
         return ret
             
     def hasNext(self):
         """
         :rtype: bool
         """
-        if self.i >  len(self.vec2d)-1:
-            return False
-        else:
-            return True
+        while self.i < len(self.vec):
+            if self.col < len(self.vec[self.i]):
+                return True
+            self.col = 0
+            self.row += 1
+        return False
                 
 
 # Your Vector2D object will be instantiated and called as such:
