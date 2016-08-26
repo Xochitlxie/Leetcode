@@ -19,10 +19,9 @@ class Vector2D(object):
                 while not self.vec2d[self.i]:
                     self.i += 1
             self.j = 0
-        else:
+        elif self.j < len(self.vec2d[self.i]) - 1:
             self.j += 1
             
-
     def hasNext(self):
         """
         :rtype: bool
