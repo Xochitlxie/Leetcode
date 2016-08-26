@@ -4,7 +4,7 @@ class Solution(object):
         :type num: int
         :rtype: bool
         """
-        r = x
-        while r*r > x:
-            r = (r + x/r) / 2
-        return r*r == x
+        r = num
+        while r*r > num:
+            r = (r + num/r) / 2
+        return r*r == num
