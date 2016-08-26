@@ -23,8 +23,8 @@ class Vector2D(object):
         while self.i < len(self.vec):
             if self.col < len(self.vec[self.i]):
                 return True
-            self.col = 0
-            self.row += 1
+            self.j = 0
+            self.i += 1
         return False
                 
 
