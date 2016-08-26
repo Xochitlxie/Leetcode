@@ -10,7 +10,7 @@ class Solution(object):
             temp=i*i
             if temp<=n:
                 if int((n-temp)**(0.5))**2+temp==n: 
-                return 1+ (0 if temp==0 else 1)
+                    return 1+ (0 if temp==0 else 1)
             else:
                 break 
         return 3
