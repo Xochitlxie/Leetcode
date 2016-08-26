@@ -21,6 +21,7 @@ class Vector2D(object):
             self.j = 0
         elif self.j < len(self.vec2d[self.i]) - 1:
             self.j += 1
+        return ret
             
     def hasNext(self):
         """
