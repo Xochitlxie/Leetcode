@@ -32,7 +32,7 @@ class Twitter(object):
             messageId, uId = self.message[userId].pop()
             if uId in self.follow[userId]:
                 result.append(messageId)
-        return list(self.message[userId])
+        return result
 
     def follow(self, followerId, followeeId):
         """
