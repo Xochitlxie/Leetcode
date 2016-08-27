@@ -33,7 +33,6 @@ class SnakeGame(object):
         """
         
         tail = self.snake.popleft()
-        print tail
         self.body.remove(tail)
         if not self.snake:
             head = tail
@@ -44,7 +43,6 @@ class SnakeGame(object):
         if nx < 0 or ny < 0 or nx>= self.width or ny >= self.height or (nx,ny) in self.body:
             return -1
         self.snake.append((nx,ny))
-        print self.snake
         self.body.add((nx,ny))
         if self.foodIndex < len(self.food) and nx == self.food[self.foodIndex][1] and ny == self.food[self.foodIndex][0]:
             self.foodIndex += 1
