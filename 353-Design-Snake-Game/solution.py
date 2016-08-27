@@ -13,14 +13,14 @@ class SnakeGame(object):
         :type height: int
         :type food: List[List[int]]
         """
-        self.dirs = {"U":(0,1),"D":(0,-1),"L":(-1,0),"R":(1,0)}
+        self.dirs = {"U":(0,-1),"D":(0,1),"L":(-1,0),"R":(1,0)}
         self.food = food
         self.width = width
         self.height = height
         self.foodIndex = 0
         self.snake = collections.deque()
         self.snake.append((0,0))
-        self.body = set((0,0))
+        self.body = set([(0,0)])
         
     def move(self, direction):
         """
@@ -31,7 +31,9 @@ class SnakeGame(object):
         :type direction: str
         :rtype: int
         """
+        
         tail = self.snake.popleft()
+        print tail
         self.body.remove(tail)
         if not self.snake:
             head = tail
@@ -42,13 +44,13 @@ class SnakeGame(object):
         if nx < 0 or ny < 0 or nx>= self.width or ny >= self.height or (nx,ny) in self.body:
             return -1
         self.snake.append((nx,ny))
+        print self.snake
         self.body.add((nx,ny))
-        if self.foodIndex < len(self.foods) and nx == self.foods[self.foodIndex][1] and ny == self.foods[self.foodIndex][0]:
+        if self.foodIndex < len(self.food) and nx == self.food[self.foodIndex][1] and ny == self.food[self.foodIndex][0]:
             self.foodIndex += 1
             self.snake.appendleft(tail)
             self.body.add(tail)
         return len(self.snake) - 1
-
 
 # Your SnakeGame object will be instantiated and called as such:
 # obj = SnakeGame(width, height, food)
