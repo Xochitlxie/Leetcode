@@ -18,7 +18,6 @@ class RandomizedCollection(object):
         if res:
             self.dict[val] = set()
         self.dict[val].add(len(self.list)-1)
-        print self.list
         return res
 
     def remove(self, val):
@@ -30,11 +29,16 @@ class RandomizedCollection(object):
         if val not in self.dict:
             return False
         else:
-            outIndex,num = self.dict[val].pop(),self.list[-1]
-            self.dict[num].remove(len(self.list)-1)
-            self.dict[num].add(outIndex)
-            self.list[outIndex] = num
-            self.list.pop()
+            if len(self.list) == 1:
+                self.list.pop()
+                del self.dict[val]
+            else:
+                outIndex,num = self.dict[val].pop(),self.list[-1]
+                if len(self.list)-1 in self.dict[num]:
+                    self.dict[num].remove(len(self.list)-1)
+                self.dict[num].add(outIndex)
+                self.list[outIndex] = num
+                self.list.pop()
             return True
 
     def getRandom(self):
