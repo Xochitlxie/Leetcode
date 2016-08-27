@@ -22,7 +22,7 @@ class WordDistance(object):
         a,b = self.wordIndex[word1],self.wordIndex[word2]
         m,n,i,j,res = len(a),len(b),0,0,sys.maxsize
         while i < m and j < n:
-            res = min(res,abs(a[i]-a[j]))
+            res = min(res,abs(a[i]-b[j]))
             if a[i] < b[j]:
                 i += 1
             else:
