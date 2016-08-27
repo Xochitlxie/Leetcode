@@ -14,10 +14,10 @@ class Twitter(object):
         :type tweetId: int
         :rtype: void
         """
-        if userId not in self.follow:
+        if userId not in self.follow.keys():
             self.follow[userId] = set([userId])
         for user in list(self.follow[userId]):
-            if user not in self.message:
+            if user not in self.message.keys():
                 self.message[user] = []
             self.message[user].append((tweetId,userId))
         
@@ -32,7 +32,7 @@ class Twitter(object):
             messageId, uId = self.message[userId].pop()
             if uId in self.follow[userId]:
                 result.append(messageId)
-        return list(self.message[userID])
+        return list(self.message[userId])
 
     def follow(self, followerId, followeeId):
         """
