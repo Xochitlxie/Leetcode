@@ -43,7 +43,7 @@ class SnakeGame(object):
             return -1
         self.snake.append((nx,ny))
         self.body.add((nx,ny))
-        if self.foodIndex < len(self.foods) and nx == self.foods[self.foodIndex][1] and ny = self.foods[self.foodIndex][0]:
+        if self.foodIndex < len(self.foods) and nx == self.foods[self.foodIndex][1] and ny == self.foods[self.foodIndex][0]:
             self.foodIndex += 1
             self.snake.appendleft(tail)
             self.body.add(tail)
