@@ -14,6 +14,8 @@ class Twitter(object):
         :type tweetId: int
         :rtype: void
         """
+        if userId not in self.follow:
+            self.follow[userId] = set([userId])
         for user in list(self.follow[userId]):
             if user not in self.message:
                 self.message[user] = []
