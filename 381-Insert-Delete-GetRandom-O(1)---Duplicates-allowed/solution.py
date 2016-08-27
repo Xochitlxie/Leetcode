@@ -28,18 +28,16 @@ class RandomizedCollection(object):
         """
         if val not in self.dict:
             return False
-        else:
-            if len(self.list) == 1:
-                self.list.pop()
-                del self.dict[val]
-            else:
-                outIndex,num = self.dict[val].pop(),self.list[-1]
-                if len(self.list)-1 in self.dict[num]:
-                    self.dict[num].remove(len(self.list)-1)
-                self.dict[num].add(outIndex)
-                self.list[outIndex] = num
-                self.list.pop()
-            return True
+        i,newVal = self.dict[val].pop(),self.list[-1]
+        if len(self.dict[val]) == 0:
+            del self.dict[val]
+        self.list[i] = newVal
+        if newVal in self.dict:
+            self.dict[newVal].add(i)
+            self.dict[newVal].remove(len(self.list)-1)
+        self.list.pop()
+        return True
+ 
 
     def getRandom(self):
         """
