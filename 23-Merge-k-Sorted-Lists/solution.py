@@ -18,5 +18,5 @@ class Solution(object):
                 lst = lst.next
         
         while heap:
-            ret.append(heap.heappop())
+            ret.append(heap.heappop(heap))
         return ret
