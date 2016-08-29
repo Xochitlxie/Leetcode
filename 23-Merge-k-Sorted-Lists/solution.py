@@ -17,9 +17,9 @@ class Solution(object):
         while h:
             v,n = h[0]
             if n.next is None:
-                h.heappop(n)
+                heapq.heappop(h)
             else:
-                h.heapreplace(h,(n.next.val,n.next))
+                heapq.heapreplace(h,(n.next.val,n.next))
             node.next = n
             node = node.next
        
