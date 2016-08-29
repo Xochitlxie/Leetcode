@@ -10,8 +10,6 @@ class Solution(object):
                 first = n
             elif n<= second:
                 second = n
-            self:
+            else:
                 return True
         return False
-        
-        
