@@ -5,12 +5,12 @@ class Solution(object):
         :rtype: bool
         """
         stack = []
-        dict = {"(":")","{":"}","[":"]"}
+        dict = {"}":"{","]":"[",")":"("}
         for char in s:
             if len(stack) == 0:
                 stack.append(char)
-            elif stack[-1] == char:
+            elif dict[stack[-1]] == char:
                 stack.pop()
             else:
-                stack.appedn(char)
+                stack.append(char)
         return len(stack) == 0
