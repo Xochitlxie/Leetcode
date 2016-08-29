@@ -7,7 +7,7 @@ class Solution(object):
         """
         res = 0
         for c in s:
-            res = res ^ c
+            res ^= c
         for ch in t:
-            res = res ^ ch
+            res ^= ch
         return res
