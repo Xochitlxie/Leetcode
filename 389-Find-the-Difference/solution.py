@@ -10,4 +10,4 @@ class Solution(object):
             res ^= ord(c)
         for ch in t:
             res ^= ord(ch)
-        return char(res)
+        return chr(res)
