@@ -7,7 +7,7 @@ class Solution(object):
         """
         res = 0
         for c in s:
-            res ^= c
+            res ^= ord(c)
         for ch in t:
-            res ^= ch
-        return res
+            res ^= ord(ch)
+        return char(res)
