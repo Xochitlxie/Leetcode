@@ -7,8 +7,8 @@ class Solution(object):
         stack = []
         dict = {"(":")","{":"}","[":"]"}
         for char in s:
-            if stack[-1] == char:
-                stack.pop()
-            else:
+            if len(stack) == 0 or stack[-1] != char:
                 stack.append(char)
+            else stack[-1] == char:
+                stack.pop()
         return len(stack) == 0
