@@ -13,7 +13,7 @@ class Solution(object):
         """
         dummy = node = ListNode(None)
         h = [(n.val,n) for n in lists if n]
-        heapify(h)
+        heqpq.heapify(h)
         while h:
             v,n = h[0]
             if n.next is None:
