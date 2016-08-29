@@ -21,7 +21,6 @@ class Solution(object):
             else:
                 h.heapreplace(h,(n.next.val,n.next))
             node.next = n
-            node.next = n
             node = node.next
        
         return dummy.next
