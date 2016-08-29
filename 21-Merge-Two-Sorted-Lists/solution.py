@@ -18,7 +18,7 @@ class Solution(object):
         if l1.val < l2.val:
             l1.next = self.mergeTwoList(l1.next,l2)
             return l1
-        elsE:
+        else:
             l2.next = self.mergeTwoList(l1,l2.next)
             return l2
         
