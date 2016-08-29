@@ -11,12 +11,17 @@ class Solution(object):
         :type lists: List[ListNode]
         :rtype: ListNode
         """
-        ret,heap = [],[]
-        for lst in lists:
-            while lst:
-                heapq.heappush(heap,lst.val)
-                lst = lst.next
-        
-        while heap:
-            ret.append(heap.heappop(heap))
-        return ret
+        dummy = node = ListNode(None)
+        h = [(n.val,n) for n in lists if n]
+        heapify(h)
+        while h:
+            v,n = h[0]
+            if n.next is None:
+                h.heappop(n)
+            else:
+                h.heapreplace(h,(n.next.val,n.next))
+            node.next = n
+            node.next = n
+            node = node.next
+       
+        return dummy.next
