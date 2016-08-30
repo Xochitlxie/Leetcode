@@ -11,14 +11,12 @@ class Solution(object):
         :type root: TreeNode
         :rtype: bool
         """
-        def isValidBST(self, root):
         output = []
         self.inOrder(root, output)
         
         for i in range(1, len(output)):
             if output[i-1] >= output[i]:
                 return False
-
         return True
 
     def inOrder(self, root, output):
