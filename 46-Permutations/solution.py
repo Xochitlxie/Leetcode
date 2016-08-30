@@ -7,7 +7,7 @@ class Solution(object):
         result = []
         self.dfs(nums,[],result)
         return result
-    
+        
     def dfs(self,nums,path,result):
         if not nums:
             result.append(path)
