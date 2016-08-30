@@ -11,7 +11,7 @@ class Solution(object):
         :type root: TreeNode
         :rtype: bool
         """
-        if not root:
+        if root != None:
             if root.left.val > root.val or root.right.val < root.val:
                 return False
             else:
