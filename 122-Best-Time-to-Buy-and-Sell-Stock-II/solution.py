@@ -12,7 +12,6 @@ class Solution(object):
         for i in range(1,len(prices)):
             if prices[i] >= lastPrice:
                 lastPrice = prices[i]
-                curMin = min(curMin,prices[i])
             else:
                 result += lastPrice - curMin
                 curMin = prices[i]
