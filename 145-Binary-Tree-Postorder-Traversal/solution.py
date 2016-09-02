@@ -11,14 +11,15 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[int]
         """
-        result = []
-        self.postorder(root,result)
-        return result
-    
-    def postorder(self,root,result):
+        stack,result = [root],[]
         if not root:
-            return
-        self.postorder(root.left,result)
-        self.postorder(root.right,result)
-        result.append(root.val)
-        return root
+            return result
+
+        while stack:
+            node = stack.pop()
+            if node.left:
+                stack.append(node.left)
+            if node.right:
+                stack.append(node.right)
+            result.append(node.val)
+        return result[::-1]
