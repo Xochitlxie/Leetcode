@@ -11,13 +11,14 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[List[int]]
         """
-        if not root:
-            return []
-        ans,level = [],[root]
-        while level:
-            ans.append([node.val for node in level])
-            temp = []
-            for node in level:
-                temp.extend([node.left,node.right])
-            level = [leaf for leaf in temp if leaf]
-        return ans
+        result = []
+        self.dfs(root,0,result)
+        return result
+        
+    def dfs(self,root,level,result):
+        if root:
+            if len(result) <= level:
+                result.append([])
+            result[level].append(root.val)
+            self.dfs(root.left,level+1,result)
+            self.dfs(root.right,level+1,result)
