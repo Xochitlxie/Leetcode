@@ -35,7 +35,7 @@ class WordDictionary(object):
         
     def searchFrom(self,root,word):
         for i in xrange(len(word)):
-            if word[i] == "":
+            if word[i] == ".":
                 for child in root.children:
                     if self.searchFrom(root.children[child],word[i+1:]):
                         return True
@@ -43,7 +43,7 @@ class WordDictionary(object):
             elif word[i] not in root.children:
                 return False
             root = root.children[word[i]]
-        return root.isword
+        return root.word
 
 # Your WordDictionary object will be instantiated and called as such:
 # wordDictionary = WordDictionary()
