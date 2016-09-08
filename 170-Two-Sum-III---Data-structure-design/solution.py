@@ -21,7 +21,7 @@ class TwoSum(object):
         """
         ctr = self.ctr
         for num in ctr:
-            if value-num in ctr and (val-num != num or ctr[num]>1):
+            if value-num in ctr and (value-num != num or ctr[num]>1):
                 return True
         return False
 
