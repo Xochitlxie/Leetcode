@@ -15,7 +15,7 @@ class Codec:
         """
         def doit(node):
             if node:
-                val.append(node.val)
+                val.append(str(node.val))
                 doit(node.left)
                 doit(node.right)
             else:
