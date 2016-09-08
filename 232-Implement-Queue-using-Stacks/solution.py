@@ -17,7 +17,7 @@ class Queue(object):
         :rtype: nothing
         """
         self.move()
-        self.outStack.pop()
+        self.outstack.pop()
         
     def move(self):
         if not self.outstack:
