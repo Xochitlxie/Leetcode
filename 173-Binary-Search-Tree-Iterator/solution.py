@@ -12,6 +12,11 @@ class BSTIterator(object):
         """
         self.stack = []
         self.pushAll(root)
+        
+    def pushAll(self,node):
+        while node:
+            self.stack.append(node)
+            node = node.left
 
     def hasNext(self):
         """
@@ -23,16 +28,10 @@ class BSTIterator(object):
         """
         :rtype: int
         """
-        tmpNode = self.stack.pop()
+        tmpNode = stack.pop()
         self.pushAll(tmpNode.right)
         return tmpNode.val
-    
-    def pushAll(self,node):
-        while node is not None:
-            self.stack.append(node)
-            node = node.left
         
-
 # Your BSTIterator will be called like this:
 # i, v = BSTIterator(root), []
 # while i.hasNext(): v.append(i.next())
