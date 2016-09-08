@@ -30,4 +30,4 @@ class LRUCache(object):
                 self.remain -= 1
             else:
                 self.dic.popitem(last=False)
-            self.dic[key] = value
+        self.dic[key] = value
