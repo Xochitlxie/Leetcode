@@ -39,6 +39,8 @@ class Codec:
             root.right = doit()
             return node
         vals = iter(data.split(" "))
+        return doit(vals)
+        
         
 
 # Your Codec object will be instantiated and called as such:
