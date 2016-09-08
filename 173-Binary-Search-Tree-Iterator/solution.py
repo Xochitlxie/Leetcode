@@ -28,7 +28,7 @@ class BSTIterator(object):
         """
         :rtype: int
         """
-        tmpNode = stack.pop()
+        tmpNode = self.stack.pop()
         self.pushAll(tmpNode.right)
         return tmpNode.val
         
