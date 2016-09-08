@@ -4,13 +4,17 @@ class ValidWordAbbr(object):
         initialize your data structure here.
         :type dictionary: List[str]
         """
-        self.dic = set()
+        self.dic = {}
         for word in set(dictionary):
             if word:
                 if len(word) <= 2:
-                    self.dic.add(word)
+                    if word not in self.dic:
+                        self.dict[word] = set()
+                        self.dict[word].add(word)
                 else:
-                    self.dic.add(word[0]+string(len(word)-2)+word[-1])
+                    abb = word[0]+str(len(word)-2)+word[-1]
+                    if abb in self.dic:
+                        if 
 
     def isUnique(self, word):
         """
@@ -21,9 +25,18 @@ class ValidWordAbbr(object):
         if word in self.dic:
             return False
         else:
-            return True
+            if len(word) <= 2:
+                return False
+            else:
+                wordAbb = word[0]+str(len(word)-2)+word[-1]
+                if wordAbb in self.dic:
+                    if word in self.dic[wordAbb] and len(self.dic[wordAbb]) > 1:
+                        return False
+                    elif word not in self.dic[wordAbb]:
+                        return False
+        return True
         
-
+    
 
 # Your ValidWordAbbr object will be instantiated and called as such:
 # vwa = ValidWordAbbr(dictionary)
