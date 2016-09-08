@@ -4,8 +4,9 @@ class WordDistance(object):
         initialize your data structure here.
         :type words: List[str]
         """
+        self.n = len(words)
         self.wordIndex = {}
-        for i in xrange(len(words)):
+        for i in xrange(self.n):
             word = words[i]
             if word in self.wordIndex:
                 self.wordIndex[word].append(i)
@@ -20,14 +21,17 @@ class WordDistance(object):
         :rtype: int
         """
         a,b = self.wordIndex[word1],self.wordIndex[word2]
-        m,n,i,j,res = len(a),len(b),0,0,sys.maxsize
-        while i < m and j < n:
+        m,n,i,j.res = len(a),len(b),0,0,self.n
+        while i<m and j<n:
             res = min(res,abs(a[i]-b[j]))
             if a[i] < b[j]:
                 i += 1
             else:
                 j += 1
         return res
+        
+
+
 # Your WordDistance object will be instantiated and called as such:
 # wordDistance = WordDistance(words)
 # wordDistance.shortest("word1", "word2")
