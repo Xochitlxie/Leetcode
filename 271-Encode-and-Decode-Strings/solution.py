@@ -14,7 +14,13 @@ class Codec:
         :type s: str
         :rtype: List[str]
         """
-        
+        strs = []
+        i = 0
+        while i < len(s):
+            j = s.find(':', i)
+            i = j + 1 + int(s[i:j])
+            strs.append(s[j+1:i])
+        return strs
 
 # Your Codec object will be instantiated and called as such:
 # codec = Codec()
