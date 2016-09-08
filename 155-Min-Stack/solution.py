@@ -33,7 +33,7 @@ class MinStack(object):
         :rtype: int
         """
         if self.stack:
-            return self.stack[len(self.stack)-1][1]
+            return self.stack[-1][-1]
         
 # Your MinStack object will be instantiated and called as such:
 # obj = MinStack()
