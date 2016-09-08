@@ -6,24 +6,23 @@ class ZigzagIterator(object):
         :type v1: List[int]
         :type v2: List[int]
         """
-        self.queue=[_ for _ in (v1,v2) if _ ]
-   
+        self.stack = [list for list in (v1,v2) if list]
+        
     def next(self):
         """
         :rtype: int
         """
-        v=self.queue.pop(0)
-        ret=v.pop(0)
-        if v: self.queue.append(v)
-        return ret
-
+        list = self.stack.pop(0)
+        node = list.pop(0)
+        if list:
+            self.stack.append(list)
+        return node
 
     def hasNext(self):
         """
         :rtype: bool
         """
-        if self.queue: return True
-        return False
+        return len(self.stack) != 0
 
 # Your ZigzagIterator object will be instantiated and called as such:
 # i, v = ZigzagIterator(v1, v2), []
