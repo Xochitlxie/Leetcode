@@ -14,7 +14,10 @@ class ValidWordAbbr(object):
                 else:
                     abb = word[0]+str(len(word)-2)+word[-1]
                     if abb in self.dic:
-                        if 
+                        self.dic[abb].add(word)
+                    else:
+                        self.dic[abb] = set()
+                        self.dic[abb].add(word)
 
     def isUnique(self, word):
         """
