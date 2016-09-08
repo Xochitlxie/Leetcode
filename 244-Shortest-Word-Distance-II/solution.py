@@ -21,7 +21,7 @@ class WordDistance(object):
         :rtype: int
         """
         a,b = self.wordIndex[word1],self.wordIndex[word2]
-        m,n,i,j.res = len(a),len(b),0,0,self.n
+        m,n,i,j,res = len(a),len(b),0,0,self.n
         while i<m and j<n:
             res = min(res,abs(a[i]-b[j]))
             if a[i] < b[j]:
