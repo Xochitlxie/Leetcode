@@ -4,7 +4,8 @@ class MedianFinder:
         """
         Initialize your data structure here.
         """
-        self.heaps = [], []
+        self.small = []
+        self.large = []
 
     def addNum(self, num):
         """
@@ -12,7 +13,7 @@ class MedianFinder:
         :type num: int
         :rtype: void
         """
-        small, large = self.heaps
+        small, large = self.small,self.large
         heappush(small, -heappushpop(large, num))
         if len(large) < len(small):
             heappush(large, -heappop(small))
@@ -23,7 +24,7 @@ class MedianFinder:
         Returns the median of current data stream
         :rtype: float
         """
-        small, large = self.heaps
+        small, large = self.small,self.large
         if len(large) > len(small):
             return float(large[0])
         return (large[0] - small[0]) / 2.0
