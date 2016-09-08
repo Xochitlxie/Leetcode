@@ -34,7 +34,7 @@ class Codec:
             node = next(vals)
             if node == "#":
                 return None
-            root = TreeNode(int(node.val))
+            root = TreeNode(int(node))
             root.left = doit()
             root.right = doit()
             return node
