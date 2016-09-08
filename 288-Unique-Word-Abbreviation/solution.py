@@ -9,8 +9,8 @@ class ValidWordAbbr(object):
             if word:
                 if len(word) <= 2:
                     if word not in self.dic:
-                        self.dict[word] = set()
-                        self.dict[word].add(word)
+                        self.dic[word] = set()
+                        self.dic[word].add(word)
                 else:
                     abb = word[0]+str(len(word)-2)+word[-1]
                     if abb in self.dic:
@@ -26,10 +26,10 @@ class ValidWordAbbr(object):
         :rtype: bool
         """
         if word in self.dic:
-            return False
+            return True
         else:
             if len(word) <= 2:
-                return False
+                return True
             else:
                 wordAbb = word[0]+str(len(word)-2)+word[-1]
                 if wordAbb in self.dic:
