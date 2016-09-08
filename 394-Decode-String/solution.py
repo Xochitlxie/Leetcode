@@ -5,8 +5,7 @@ class Solution(object):
         :rtype: str
         """
         stack = []
-        if not s:
-            stack.append(["",1])
+        stack.append(["",1])
         num = ""
         for ch in s:
             if ch.isdigit():
