@@ -6,7 +6,7 @@ class Codec:
         :type strs: List[str]
         :rtype: str
         """
-        return ''.join('%d:'+ s for s in strs % len(s))
+        return ''.join('%d:'% len(s)+ s for s in strs )
 
     def decode(self, s):
         """Decodes a single string to a list of strings.
