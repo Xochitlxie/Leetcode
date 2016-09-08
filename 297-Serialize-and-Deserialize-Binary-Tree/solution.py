@@ -37,9 +37,9 @@ class Codec:
             root = TreeNode(int(node))
             root.left = doit()
             root.right = doit()
-            return node
+            return root
         vals = iter(data.split(" "))
-        return doit(vals)
+        return doit()
         
 # Your Codec object will be instantiated and called as such:
 # codec = Codec()
