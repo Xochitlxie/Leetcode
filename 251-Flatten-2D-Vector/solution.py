@@ -13,7 +13,7 @@ class Vector2D(object):
         :rtype: int
         """
         ret = self.vec[self.i][self.j]
-        j += 1
+        self.j += 1
         return ret
 
     def hasNext(self):
