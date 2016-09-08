@@ -21,7 +21,7 @@ class Codec:
             else:
                 val.append("#")
         val = []
-        doit(node)
+        doit(root)
         return " ".join(vals)
 
     def deserialize(self, data):
@@ -41,8 +41,6 @@ class Codec:
         vals = iter(data.split(" "))
         return doit(vals)
         
-        
-
 # Your Codec object will be instantiated and called as such:
 # codec = Codec()
 # codec.deserialize(codec.serialize(root))
