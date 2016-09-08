@@ -20,7 +20,7 @@ class Trie(object):
         """
         node = self.root
         for i in word:
-            if i not in root.children:
+            if i not in node.children:
                 node.children[i] = TrieNode()
             node = node.children[i]
         node.word = True
