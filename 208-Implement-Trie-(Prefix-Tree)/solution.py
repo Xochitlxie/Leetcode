@@ -46,7 +46,7 @@ class Trie(object):
         :rtype: bool
         """
         node = self.root
-        if i in prefix:
+        for i in prefix:
             if i not in node.children:
                 return False
             node = node.children[i]
