@@ -22,7 +22,7 @@ class Codec:
                 val.append("#")
         val = []
         doit(root)
-        return " ".join(vals)
+        return " ".join(val)
 
     def deserialize(self, data):
         """Decodes your encoded data to tree.
