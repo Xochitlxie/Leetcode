@@ -18,7 +18,6 @@ class MedianFinder:
         if len(large) < len(small):
             heappush(large, -heappop(small))
         
-
     def findMedian(self):
         """
         Returns the median of current data stream
