@@ -30,7 +30,7 @@ class Codec:
         :type data: str
         :rtype: TreeNode
         """
-        def doit(vals):
+        def doit():
             node = next(vals)
             if node == "#":
                 return None
