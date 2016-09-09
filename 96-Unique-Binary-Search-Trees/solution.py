@@ -8,11 +8,11 @@ class Solution(object):
 
     
     def count(self,n):
-        if n == 1:
+        if n == 0:
             return 1
         result = 0
         for i in range(1,n+1):
-            left = self.count(i-0)
-            right = self.count(n+1-i)
+            left = self.count(i-1)
+            right = self.count(n-i)
             result += left*right
         return result 
