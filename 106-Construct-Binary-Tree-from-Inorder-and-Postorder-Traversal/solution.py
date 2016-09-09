@@ -18,8 +18,8 @@ class Solution(object):
         if length == 0:
             return None
         root = TreeNode(postorder[pstart+length-1])
-        print root.val
         leftLen = inorder.index(postorder[pstart+length-1])-istart
         root.left = self.getNode(postorder,pstart,inorder,istart,leftLen)
         root.right = self.getNode(postorder,pstart+leftLen,inorder,istart+leftLen+1,length-leftLen-1)
         return root
+        
