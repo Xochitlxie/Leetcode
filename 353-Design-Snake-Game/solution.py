@@ -15,7 +15,7 @@ class SnakeGame(object):
         self.height = height
         self.food = food
         self.foodIndex = 0
-        self.dirs = {"U":(-1,0),"D":(1,0),"L":(0,-1),"R":(0,-1)}
+        self.dirs = {"U":(-1,0),"D":(1,0),"L":(0,-1),"R":(0,1)}
         self.snake = collections.deque()
         self.snake.append((0,0))
         self.body = set([(0,0)])
@@ -43,7 +43,7 @@ class SnakeGame(object):
         self.body.add((nx,ny))
         if self.foodIndex < len(self.food) and nx==self.food[self.foodIndex][0] and ny == self.food[self.foodIndex][1]:
             self.foodIndex += 1
-            self.snake.leftappend(tail)
+            self.snake.appendleft(tail)
             self.body.add(tail)
         return len(self.snake)-1
 
