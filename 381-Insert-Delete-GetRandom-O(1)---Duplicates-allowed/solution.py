@@ -31,8 +31,9 @@ class RandomizedCollection(object):
             if len(self.dict[val]) == 0:
                 del self.dict[val]
             self.list[i] = newVal
-            self.dict[newVal].add(i)
-            self.dict[newVal].remove(len(self.list)-1)
+            if newVal in self.dict:
+                self.dict[newVal].add(i)
+                self.dict[newVal].remove(len(self.list)-1)
             self.list.pop()
             return True
             
