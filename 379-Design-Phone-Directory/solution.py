@@ -7,7 +7,7 @@ class PhoneDirectory(object):
         :type maxNumbers: int
         """
         self.numPool = set(range(maxNumbers))
-        
+
     def get(self):
         """
         Provide a number which is not assigned to anyone.
@@ -25,11 +25,8 @@ class PhoneDirectory(object):
         :type number: int
         :rtype: bool
         """
-        if number in self.numPool:
-            return True
-        else:
-            return False
-        
+        return number in self.numPool
+
     def release(self, number):
         """
         Recycle or release a number.
@@ -37,7 +34,6 @@ class PhoneDirectory(object):
         :rtype: void
         """
         self.numPool.add(number)
-        
 
 
 # Your PhoneDirectory object will be instantiated and called as such:
