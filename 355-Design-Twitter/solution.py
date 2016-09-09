@@ -4,43 +4,27 @@ class Twitter(object):
         """
         Initialize your data structure here.
         """
-        self.time = 0
-        self.tweets = {}
-        self.followee = {}
+        self.timer = itertools.count(step=-1)
+        self.tweets = collections.defaultdict(collections.deque)
+        self.followees = collections.defaultdict(set)
 
-    def postTweet(self, userId, tweetId):
+    def postTweet(self, user, tweetId):
         """
         Compose a new tweet.
         :type userId: int
         :type tweetId: int
         :rtype: void
         """
-        self.time += 1
-        self.tweets[user] = self.tweets.get(user, []) + [(-self.time,  tweet)]
+        self.tweets[userId].appendleft((next(self.timer), tweetId))
 
-    def getNewsFeed(self, userId):
+    def getNewsFeed(self, user):
         """
         Retrieve the 10 most recent tweet ids in the user's news feed. Each item in the news feed must be posted by users who the user followed or by the user herself. Tweets must be ordered from most recent to least recent.
         :type userId: int
         :rtype: List[int]
         """
-        h, tweets = [], self.tweets
-        people = self.followee.get(user, set()) | set([user])
-        for person in people:
-            if person in tweets and tweets[person]:
-                time, tweet = tweets[person][-1]
-                h.append((time, tweet, person, len(tweets[person]) - 1))
-        heapq.heapify(h)
-        news = []
-        for _ in range(10):
-            if h:
-                time, tweet, person, idx = heapq.heappop(h)
-                news.append(tweet)
-                if idx:
-                    new_time, new_tweet = tweets[person][idx-1]
-                    heapq.heappush(h, (new_time, new_tweet, person, idx - 1))
-        return news
-                
+        tweets = heapq.merge(*(self.tweets[u] for u in self.followees[userId] | {userId}))
+        return [t for _, t in itertools.islice(tweets, 10)]
 
     def follow(self, followerId, followeeId):
         """
@@ -49,7 +33,8 @@ class Twitter(object):
         :type followeeId: int
         :rtype: void
         """
-        self.followee[follower] = self.followee.get(follower, set()) | set([other])
+        self.followees[followerId].add(followeeId)
+
 
     def unfollow(self, followerId, followeeId):
         """
@@ -58,8 +43,7 @@ class Twitter(object):
         :type followeeId: int
         :rtype: void
         """
-        if follower in self.followee:
-            self.followee[follower].discard(other)
+        self.followees[followerId].discard(followeeId)
 
 
 # Your Twitter object will be instantiated and called as such:
