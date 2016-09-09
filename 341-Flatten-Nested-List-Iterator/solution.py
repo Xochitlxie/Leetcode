@@ -32,7 +32,7 @@ class NestedIterator(object):
         """
         def push(nestedList):
             for i in nestedList:
-                if i.isInterger:
+                if i.isInteger:
                     self.stack.append(i.getInterger())
                 else:
                     list = i.getList()
