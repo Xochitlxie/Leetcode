@@ -32,7 +32,7 @@ class NestedIterator(object):
         """
         def push(nestedList):
             for i in nestedList:
-                if i.isInteger:
+                if i.isInteger():
                     self.stack.append(i.getInteger())
                 else:
                     list = i.getList()
@@ -45,13 +45,13 @@ class NestedIterator(object):
         """
         :rtype: int
         """
-        return self.stack.pop()
+        return self.stack.pop(0)
 
     def hasNext(self):
         """
         :rtype: bool
         """
-        return len(stack) != 0
+        return len(self.stack) != 0
 
 # Your NestedIterator object will be instantiated and called as such:
 # i, v = NestedIterator(nestedList), []
