@@ -11,7 +11,7 @@ class Twitter(object):
         """
         Compose a new tweet.
         :type userId: int
-        :type tweetId: int
+        :type tweetIda: int
         :rtype: void
         """
         if userId not in self.user_data:         
