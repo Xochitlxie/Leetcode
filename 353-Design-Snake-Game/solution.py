@@ -13,7 +13,7 @@ class SnakeGame(object):
         """
         self.width = width
         self.height = height
-        self.food = self.food
+        self.food = food
         self.foodIndex = 0
         self.dirs = {"U":(-1,0),"D":(1,0),"L":(0,-1),"R":(0,-1)}
         self.snake = collections.deque()
