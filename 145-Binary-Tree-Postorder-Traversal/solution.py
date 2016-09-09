@@ -14,7 +14,6 @@ class Solution(object):
         stack,result = [root],[]
         if not root:
             return result
-
         while stack:
             node = stack.pop()
             if node.left:
@@ -23,3 +22,4 @@ class Solution(object):
                 stack.append(node.right)
             result.append(node.val)
         return result[::-1]
+        
