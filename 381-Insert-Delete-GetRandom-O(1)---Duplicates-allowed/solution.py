@@ -17,7 +17,7 @@ class RandomizedCollection(object):
         self.list.append(val)
         if res:
             self.dict[val] = set()
-        self.dict.add(len(self.dict)-1)
+        self.dict[val].add(len(self.dict)-1)
         return res
 
     def remove(self, val):
