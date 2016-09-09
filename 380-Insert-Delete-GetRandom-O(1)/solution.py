@@ -27,7 +27,7 @@ class RandomizedSet(object):
         """
         if val in self.pos:
             index = self.pos[val]
-            self.nums[index],self.pos[self.nums[-1]] = self.nums[-1],self.nums[index],index
+            self.nums[index],self.pos[self.nums[-1]] = self.nums[-1],index
             self.nums.pop()
             self.pos.pop(val)
             return True
