@@ -1,11 +1,10 @@
-from collections import deque
 class HitCounter(object):
 
     def __init__(self):
         """
         Initialize your data structure here.
         """
-        self.times = deque()
+        self.times = collections.deque()
         self.map = {}
         self.count = 0
 
@@ -30,11 +29,10 @@ class HitCounter(object):
         :type timestamp: int
         :rtype: int
         """
-        while self.count and self.times[0] <= timestamp - 300:
+        while self.count and  self.times[0] <= timestamp-300:
             self.count -= self.map[self.times[0]]
             self.times.popleft()
         return self.count
-        
 
 
 # Your HitCounter object will be instantiated and called as such:
