@@ -17,7 +17,7 @@ class RandomizedCollection(object):
         self.list.append(val)
         if res:
             self.dict[val] = set()
-        self.dict[val].add(len(self.list)-1)
+        self.dict.add(len(self.dict)-1)
         return res
 
     def remove(self, val):
@@ -26,18 +26,17 @@ class RandomizedCollection(object):
         :type val: int
         :rtype: bool
         """
-        if val not in self.dict:
-            return False
-        i,newVal = self.dict[val].pop(),self.list[-1]
-        if len(self.dict[val]) == 0:
-            del self.dict[val]
-        self.list[i] = newVal
-        if newVal in self.dict:
+        if val in self.dict:
+            i,newVal = self.dict[val].pop(),self.list[-1]
+            if len(self.dict[val]) == 0:
+                del self.dict[val]
+            self.list[i] = newVal
             self.dict[newVal].add(i)
             self.dict[newVal].remove(len(self.list)-1)
-        self.list.pop()
-        return True
- 
+            self.list.pop()
+            return True
+            
+        return False
 
     def getRandom(self):
         """
@@ -45,7 +44,6 @@ class RandomizedCollection(object):
         :rtype: int
         """
         return self.list[random.randint(0,len(self.list)-1)]
-        
 
 
 # Your RandomizedCollection object will be instantiated and called as such:
