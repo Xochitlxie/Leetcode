@@ -13,6 +13,6 @@ class Solution(object):
         :type q: TreeNode
         :rtype: TreeNode
         """
-        while(((root.val-p.val)*(root.val-q.val))>0):
+        while((root.val-p.val)*(root.val-q.val)>0):
             root = (root.left,root.right)[p.val>root.val]
         return root
