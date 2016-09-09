@@ -4,10 +4,9 @@ class Twitter(object):
         """
         Initialize your data structure here.
         """
-        self.timer = itertools.count(step=-1)
-        self.tweets = collections.defaultdict(collections.deque)
-        self.followees = collections.defaultdict(set)
-
+        self.timestamp = 1  
+        self.user_data = {}
+        
     def postTweet(self, userId, tweetId):
         """
         Compose a new tweet.
@@ -15,7 +14,17 @@ class Twitter(object):
         :type tweetId: int
         :rtype: void
         """
-        self.tweets[userId].appendleft((next(self.timer), tweetId))
+        if userId not in self.user_data:         
+        # Each userId has a tweets list (10 items at most) and a set of followees (include itself)
+        self.user_data[userId] = collections.deque(), {userId} 
+    
+        # Discard outdated tweet    
+        if len(self.user_data[userId][0]) == 10:
+            self.user_data[userId][0].pop()
+        
+        self.user_data[userId][0].appendleft((-self.timestamp, tweetId))
+        self.timestamp += 1
+
 
     def getNewsFeed(self, userId):
         """
@@ -23,8 +32,19 @@ class Twitter(object):
         :type userId: int
         :rtype: List[int]
         """
-        tweets = heapq.merge(*(self.tweets[u] for u in self.followees[userId] | {userId}))
-        return [t for _, t in itertools.islice(tweets, 10)]
+        if userId not in self.user_data:
+            return []
+        
+        heap = []
+        for uid in self.user_data[userId][1]:
+            if uid in self.user_data:
+                for tweet in self.user_data[uid][0]:
+                    heapq.heappush(heap, tweet)
+                
+        res = []
+        while len(res) < 10 and heap:
+            res.append(heapq.heappop(heap)[1])
+        return res
 
     def follow(self, followerId, followeeId):
         """
@@ -33,7 +53,10 @@ class Twitter(object):
         :type followeeId: int
         :rtype: void
         """
-        self.followees[followerId].add(followeeId)
+        if followerId not in self.user_data:
+            self.user_data[followerId] = collections.deque(), {followerId} 
+        
+        self.user_data[followerId][1].add(followeeId)
 
 
     def unfollow(self, followerId, followeeId):
@@ -43,7 +66,11 @@ class Twitter(object):
         :type followeeId: int
         :rtype: void
         """
-        self.followees[followerId].discard(followeeId)
+        if followerId not in self.user_data:
+            return
+    
+        if followerId != followeeId:
+            self.user_data[followerId][1].remove(followeeId)
 
 
 # Your Twitter object will be instantiated and called as such:
