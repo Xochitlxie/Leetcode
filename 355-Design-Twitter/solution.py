@@ -4,9 +4,10 @@ class Twitter(object):
         """
         Initialize your data structure here.
         """
-        self.follow = {}
-        self.message = {}
-        
+        self.time = 0
+        self.tweets = {}
+        self.followee = {}
+
     def postTweet(self, userId, tweetId):
         """
         Compose a new tweet.
@@ -14,25 +15,32 @@ class Twitter(object):
         :type tweetId: int
         :rtype: void
         """
-        if userId not in self.follow.keys():
-            self.follow[userId] = set([userId])
-        for user in list(self.follow[userId]):
-            if user not in self.message.keys():
-                self.message[user] = []
-            self.message[user].append((tweetId,userId))
-        
+        self.time += 1
+        self.tweets[user] = self.tweets.get(user, []) + [(-self.time,  tweet)]
+
     def getNewsFeed(self, userId):
         """
         Retrieve the 10 most recent tweet ids in the user's news feed. Each item in the news feed must be posted by users who the user followed or by the user herself. Tweets must be ordered from most recent to least recent.
         :type userId: int
         :rtype: List[int]
         """
-        result = []
-        while len(result) < 10 and not self.message[userId]:
-            messageId, uId = self.message[userId].pop()
-            if uId in self.follow[userId]:
-                result.append(messageId)
-        return result
+        h, tweets = [], self.tweets
+        people = self.followee.get(user, set()) | set([user])
+        for person in people:
+            if person in tweets and tweets[person]:
+                time, tweet = tweets[person][-1]
+                h.append((time, tweet, person, len(tweets[person]) - 1))
+        heapq.heapify(h)
+        news = []
+        for _ in range(10):
+            if h:
+                time, tweet, person, idx = heapq.heappop(h)
+                news.append(tweet)
+                if idx:
+                    new_time, new_tweet = tweets[person][idx-1]
+                    heapq.heappush(h, (new_time, new_tweet, person, idx - 1))
+        return news
+                
 
     def follow(self, followerId, followeeId):
         """
@@ -41,9 +49,7 @@ class Twitter(object):
         :type followeeId: int
         :rtype: void
         """
-        if followeeId not in self.follow.keys():
-            self.follow[followeeId] = set([followeeId])
-        self.follow[followeeId].add(followerId)
+        self.followee[follower] = self.followee.get(follower, set()) | set([other])
 
     def unfollow(self, followerId, followeeId):
         """
@@ -52,8 +58,9 @@ class Twitter(object):
         :type followeeId: int
         :rtype: void
         """
-        if followerId in self.follow[followeeId]:
-            self.follow[followeeId].remove(followerId)
+        if follower in self.followee:
+            self.followee[follower].discard(other)
+
 
 # Your Twitter object will be instantiated and called as such:
 # obj = Twitter()
