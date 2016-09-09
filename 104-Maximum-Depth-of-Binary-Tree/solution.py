@@ -6,17 +6,17 @@
 #         self.right = None
 
 class Solution(object):
+    def countDepth(self,root,depth):
+        if root==None:
+            return depth
+        else:
+            leftDepth=self.countDepth(root.left,depth+1)
+            rightDepth=self.countDepth(root.right,depth+1)
+            return max(rightDepth,leftDepth)
+    
     def maxDepth(self, root):
         """
         :type root: TreeNode
         :rtype: int
         """
         return self.countDepth(root,0)
-        
-    def countDepth(self,node,depth):
-        if not node:
-            return depth
-        else:
-            leftDepth = self.countDepth(node.left,depth+1)
-            rightDepth = self.countDepth(node.right,depth+1)
-            return max(leftDepth,rightDepth)
