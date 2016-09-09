@@ -26,18 +26,17 @@ class RandomizedCollection(object):
         :type val: int
         :rtype: bool
         """
-        if val in self.dict:
-            i,newVal = self.dict[val].pop(),self.list[-1]
-            if len(self.dict[val]) == 0:
-                del self.dict[val]
-            self.list[i] = newVal
-            if newVal in self.dict:
-                self.dict[newVal].add(i)
-                self.dict[newVal].remove(len(self.list)-1)
-            self.list.pop()
-            return True
-            
-        return False
+        if val not in self.dict:
+            return False
+        i,newVal = self.dict[val].pop(),self.list[-1]
+        if len(self.dict[val]) == 0:
+            del self.dict[val]
+        self.list[i] = newVal
+        if newVal in self.dict:
+            self.dict[newVal].add(i)
+            self.dict[newVal].remove(len(self.list)-1)
+        self.list.pop()
+        return True
 
     def getRandom(self):
         """
