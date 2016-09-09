@@ -13,6 +13,6 @@ class Solution(object):
         result = 0
         for i in range(1,n+1):
             left = self.count(i-0)
-            right = self.count(n-i)
+            right = self.count(n+1-i)
             result += left*right
         return result 
