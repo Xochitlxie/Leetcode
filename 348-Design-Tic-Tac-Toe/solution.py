@@ -8,7 +8,7 @@ class TicTacToe(object):
         self.rows = [0] * n
         self.cols = [0] * n
         self.diagonal = 0
-        self.antidiagonal = 0
+        self.antiDiagonal = 0
         self.n = n
 
     def move(self, row, col, player):
