@@ -15,8 +15,8 @@ class Twitter(object):
         :rtype: void
         """
         if userId not in self.user_data:         
-        # Each userId has a tweets list (10 items at most) and a set of followees (include itself)
-        self.user_data[userId] = collections.deque(), {userId} 
+            # Each userId has a tweets list (10 items at most) and a set of followees (include itself)
+            self.user_data[userId] = collections.deque(), {userId} 
     
         # Discard outdated tweet    
         if len(self.user_data[userId][0]) == 10:
