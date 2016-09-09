@@ -70,7 +70,7 @@ class Twitter(object):
             return
     
         if followerId != followeeId:
-            self.user_data[followerId][1].remove(followeeId)
+            self.user_data[followerId][1].discard(followeeId)
 
 
 # Your Twitter object will be instantiated and called as such:
