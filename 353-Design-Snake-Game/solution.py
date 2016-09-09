@@ -1,7 +1,5 @@
-import collections
 class SnakeGame(object):
-    
-    
+
     def __init__(self, width,height,food):
         """
         Initialize your data structure here.
@@ -13,11 +11,11 @@ class SnakeGame(object):
         :type height: int
         :type food: List[List[int]]
         """
-        self.dirs = {"U":(0,-1),"D":(0,1),"L":(-1,0),"R":(1,0)}
-        self.food = food
         self.width = width
         self.height = height
+        self.food = self.food
         self.foodIndex = 0
+        self.dirs = {"U":(-1,0),"D":(1,0),"L":(0,-1),"R":(0,-1)}
         self.snake = collections.deque()
         self.snake.append((0,0))
         self.body = set([(0,0)])
@@ -31,7 +29,6 @@ class SnakeGame(object):
         :type direction: str
         :rtype: int
         """
-        
         tail = self.snake.popleft()
         self.body.remove(tail)
         if not self.snake:
@@ -40,15 +37,16 @@ class SnakeGame(object):
             head = self.snake[-1]
         nx = head[0] + self.dirs[direction][0]
         ny = head[1] + self.dirs[direction][1]
-        if nx < 0 or ny < 0 or nx>= self.width or ny >= self.height or (nx,ny) in self.body:
+        if nx < 0 or ny < 0 or nx >= self.height or ny >= self.width or (nx,ny) in self.body:
             return -1
         self.snake.append((nx,ny))
         self.body.add((nx,ny))
-        if self.foodIndex < len(self.food) and nx == self.food[self.foodIndex][1] and ny == self.food[self.foodIndex][0]:
+        if self.foodIndex < len(self.food) and nx==self.food[self.foodIndex][0] and ny == self.food[self.foodIndex][1]:
             self.foodIndex += 1
-            self.snake.appendleft(tail)
+            self.snake.leftappend(tail)
             self.body.add(tail)
-        return len(self.snake) - 1
+        return len(self.snake)-1
+
 
 # Your SnakeGame object will be instantiated and called as such:
 # obj = SnakeGame(width, height, food)
