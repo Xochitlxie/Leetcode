@@ -13,7 +13,7 @@ class Solution(object):
         """
         largest = [-2**31]
         self.helper(root,largest)
-        return self.largest
+        return largest[0]
         
     def helper(self, root, largest):
         if root == None:
