@@ -4,10 +4,15 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
+        return self.count(n)
+
     
-        res = [0] * (n+1)
-        res[0] = 1
-        for i in xrange(1,n+1):
-            for j in xrange(i):
-                res[i] += res[j] * res[i-j-1]
-        return res[n]
+    def count(self,n):
+        if n == 1:
+            return 1
+        result = 0
+        for i in range(1,n+1):
+            left = self.count(i-0)
+            right = self.count(n-1-i)
+            result += left*right
+        return result 
