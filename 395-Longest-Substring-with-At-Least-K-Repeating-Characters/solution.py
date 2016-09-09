@@ -12,4 +12,3 @@ class Solution(object):
         if s.count(c) >= k:
             return len(s)
         return max(self.longestSubstring(t, k) for t in s.split(c))
-            
