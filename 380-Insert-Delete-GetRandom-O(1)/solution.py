@@ -1,4 +1,3 @@
-import random
 class RandomizedSet(object):
 
     def __init__(self):
@@ -14,12 +13,11 @@ class RandomizedSet(object):
         :type val: int
         :rtype: bool
         """
-        if val in self.pos:
-            return False
-        else:
+        if val not in self.pos:
             self.nums.append(val)
-            self.pos[val] = len(self.nums) - 1
+            self.pos[val] = len(self.nums)-1
             return True
+        return False
 
     def remove(self, val):
         """
@@ -27,21 +25,22 @@ class RandomizedSet(object):
         :type val: int
         :rtype: bool
         """
-        if val not in self.pos:
-            return False
-        else:
-            self.nums[self.pos[val]],self.pos[self.nums[-1]] = self.nums[-1],self.pos[val]
+        if val in self.pos:
+            index = self.pos[val]
+            self.nums[index],self.pos[self.nums[-1]] = self.nums[-1],self.nums[index],index
             self.nums.pop()
             self.pos.pop(val)
             return True
+            
+        return False
         
+
     def getRandom(self):
         """
         Get a random element from the set.
         :rtype: int
         """
         return self.nums[random.randint(0,len(self.nums)-1)]
-        
 
 
 # Your RandomizedSet object will be instantiated and called as such:
