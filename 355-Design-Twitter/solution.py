@@ -8,7 +8,7 @@ class Twitter(object):
         self.tweets = collections.defaultdict(collections.deque)
         self.followees = collections.defaultdict(set)
 
-    def postTweet(self, user, tweetId):
+    def postTweet(self, userId, tweetId):
         """
         Compose a new tweet.
         :type userId: int
@@ -17,7 +17,7 @@ class Twitter(object):
         """
         self.tweets[userId].appendleft((next(self.timer), tweetId))
 
-    def getNewsFeed(self, user):
+    def getNewsFeed(self, userId):
         """
         Retrieve the 10 most recent tweet ids in the user's news feed. Each item in the news feed must be posted by users who the user followed or by the user herself. Tweets must be ordered from most recent to least recent.
         :type userId: int
