@@ -4,14 +4,10 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        last,current = 0,0
-        njump,i = 0,0
-        while current < len(nums)-1:
-            while i<= last:
-                current = max(i+nums[i],current)
-                i += 1
-            if last == current:
-                return -1
-            last = current
-            njump+=1
-        return njump
+        last, curr, steps = 0, 0, 0
+        for i, ei in enumerate(nums):
+            if i > last:
+                last = curr
+                steps += 1
+            curr = max(curr, i + ei)
+        return steps
