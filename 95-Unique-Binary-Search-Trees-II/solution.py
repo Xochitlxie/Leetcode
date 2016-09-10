@@ -21,6 +21,6 @@ class Solution(object):
                         node = TreeNode(root)
                         node.left = left
                         node.right = right
-                        trees += node,
+                        trees += node
             return trees or [None]
         return generate(1, n)
