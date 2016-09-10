@@ -15,4 +15,4 @@ class Solution(object):
             else:
                 start -= 1
                 sum += gas[start] - cost[start]
-        return sum>=0?start:-1
+        return (start,-1)[sum<0]
