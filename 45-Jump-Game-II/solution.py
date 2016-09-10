@@ -10,7 +10,7 @@ class Solution(object):
             while i<= last:
                 current = max(i+nums[i],current)
                 i += 1
-            if last = current:
+            if last == current:
                 return -1
             last = current
             njump+=1
