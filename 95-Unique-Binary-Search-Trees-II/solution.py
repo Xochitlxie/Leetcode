@@ -11,18 +11,16 @@ class Solution(object):
         :type n: int
         :rtype: List[TreeNode]
         """
-        numList = [i for i in range(1,n+1)]
-        return self.helper(numList)
-        
-    def helper(self,numList):
-        result = []
-        if not numList:
-            result.append(None)
-        for i in xrange(len(numList)):
-            root = TreeNode(numList[i])
-            for left in self.generateTrees(numList[:i]):
-                for right in self.generateTrees(numList[i+1:]):
-                    root.left = left
-                    root.right = right
-                    result.append(root)
-        return result
+        if n == 0:
+            return []
+        def generate(first, last):
+            trees = []
+            for root in range(first, last+1):
+                for left in generate(first, root-1):
+                    for right in generate(root+1, last):
+                        node = TreeNode(root)
+                        node.left = left
+                        node.right = right
+                        trees += node,
+            return trees or [None]
+        return generate(1, n)
