@@ -13,6 +13,6 @@ class Solution(object):
             if maxJump[i] >= lastStamp:
                 lastStamp = i
             i -= 1
-        return lastStamp == 0
+        return lastStep == 0
                 
             
