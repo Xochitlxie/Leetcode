@@ -9,9 +9,9 @@ class Solution(object):
             maxJump.append(i+nums[i])
         i = len(maxJump)-2
         lastStep = len(maxJump)-1
-        while i > 0:
-            if maxJump[i] >= lastStamp:
-                lastStamp = i
+        while i >= 0:
+            if maxJump[i] >= lastStep:
+                lastStep = i
             i -= 1
         return lastStep == 0
                 
