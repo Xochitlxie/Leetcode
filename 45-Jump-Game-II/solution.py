@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: int
         """
         last,current = 0,0
-        njumps,i = 0,0
+        njump,i = 0,0
         while current < len(nums)-1:
             while i<= last:
                 current = max(i+nums[i],current)
@@ -15,4 +15,3 @@ class Solution(object):
             last = current
             njump+=1
         return njump
-        
