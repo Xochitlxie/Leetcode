@@ -4,22 +4,27 @@ class Solution(object):
         :type data: List[int]
         :rtype: bool
         """
-        if not data:
-            return False
-        
-        i, n = 0, len(data)
-        arr = [bin(x)[2:].rjust(8, '0') for x in data]
-        while i < n:
-            cnt = len(arr[i]) - len(arr[i].lstrip('1'))
-            if cnt == 0:
+        if len(data) == 0:
+            return True 
+        i = 0
+        while i < len(data):
+            if data[i] < 128:
                 i += 1
-            elif 2 <= cnt <= 4:
-                while i + 1 < n and arr[i + 1].startswith('10') and cnt > 1:
-                    i += 1
-                    cnt -= 1
-                if cnt != 1:
-                    return False
-                i += 1
+            elif data[i] >= 192 and data[i] < 224 and len(data)-i>=2:
+                if data[i+1] >= 128 and data[i+1] < 192:
+                    i += 2
+                else:
+                    return False 
+            elif data[i] >= 224 and data[i] < 240 and len(data)-i>=3:
+                if data[i+1] >= 128 and data[i+1] < 192 and data[i+2] >= 128 and data[i+2] < 192:
+                    i += 3
+                else:
+                    return False  
+            elif data[i] >= 240 and data[i] < 248 and len(data)-i>=4:
+                if data[i+1] >= 128 and data[i+1] < 192 and data[i+2] >= 128 and data[i+2] < 192 and data[i+3] >= 128 and data[i+3] < 192:
+                    i += 4
+                else:
+                    return False        
             else:
                 return False
-        return True
+        return True 
