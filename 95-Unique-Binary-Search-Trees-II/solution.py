@@ -11,7 +11,7 @@ class Solution(object):
         :type n: int
         :rtype: List[TreeNode]
         """
-        numList = xrange(1,n+1)
+        numList = range(1,n+1)
         return self.helper(numList)
         
     def helper(self,numList):
@@ -26,7 +26,3 @@ class Solution(object):
                     root.right = right
                     result.append(root)
         return result
-        
-        
-            
-        
