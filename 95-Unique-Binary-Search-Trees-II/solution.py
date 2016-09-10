@@ -11,8 +11,7 @@ class Solution(object):
         :type n: int
         :rtype: List[TreeNode]
         """
-        numList = range(1,n+1)
-        return self.helper(numList)
+        return self.helper(range(1,n+1))
         
     def helper(self,numList):
         result = []
