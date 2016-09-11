@@ -17,7 +17,7 @@ class Solution(object):
             prud.append(prod[i]*prod[i-1])
         maxLen = 0
         count = 0
-        for num in puod:
+        for num in prod:
             if num < 0:
                 count += 1
                 maxLen = max(count,maxLen)
