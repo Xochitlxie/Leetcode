@@ -14,7 +14,7 @@ class Solution(object):
                 return 3
         prod = []
         for j in range(1,len(diff)):
-            prud.append(prod[i]*prod[i-1])
+            prod.append(prod[i]*prod[i-1])
         maxLen = 0
         count = 0
         for num in prod:
