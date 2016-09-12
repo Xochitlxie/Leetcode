@@ -9,7 +9,7 @@ class Solution(object):
         result = 0
         colhits = [0] * n
         for i, row in enumerate(grid):
-           for j, cell in enumerate(row):
+            for j, cell in enumerate(row):
                 if j == 0 or row[j-1] == 'W':
                     rowhits = 0
                     k = j
@@ -25,4 +25,3 @@ class Solution(object):
                 if cell == '0':
                     result = max(result, rowhits + colhits[j])
         return result
-        
