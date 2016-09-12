@@ -4,24 +4,29 @@ class Solution(object):
         :type grid: List[List[str]]
         :rtype: int
         """
-        if not grid: return 0
-        m, n = len(grid), len(grid[0])
-        result = 0
-        colhits = [0] * n
-        for i, row in enumerate(grid):
-            for j, cell in enumerate(row):
-                if j == 0 or row[j-1] == 'W':
-                    rowhits = 0
-                    k = j
-                    while k < n and row[k] != 'W':
-                        rowhits += row[k] == 'E'
-                        k += 1
-                if i == 0 or grid[i-1][j] == 'W':
-                    colhits[j] = 0
-                    k = i
-                    while k < m and grid[k][j] != 'W':
-                        colhits[j] += grid[k][j] == 'E'
-                        k += 1
-                if cell == '0':
-                    result = max(result, rowhits + colhits[j])
-        return result
+        if grid is None or len(grid) == 0 or len(grid[0]) == 0:
+            return 0
+
+        dp = [[[0, 0] for j in range(len(grid[0]))] for i in range(len(grid))]
+        for i in xrange(0, len(grid)):
+            for j in xrange(0, len(grid[0])):
+                if grid[i][j] == "E":
+                    dp[i][j] = [dp[i - 1][j][0] + 1,  + dp[i][j - 1][1] + 1]
+                elif grid[i][j] == "0":
+                    dp[i][j] = [dp[i - 1][j][0], dp[i][j - 1][1]]
+
+        maxKilled = 0
+        for i in reversed(xrange(0, len(grid))):
+            for j in reversed(xrange(0, len(grid[0]))):
+                if j != len(grid[0]) - 1:
+                    if grid[i][j + 1] != "W":
+                        dp[i][j][1] = dp[i][j + 1][1]
+                if i != len(grid) - 1:
+                    if grid[i + 1][j] != "W":
+                        dp[i][j][0] = dp[i + 1][j][0]
+                if grid[i][j] == "0":
+                    curKilled = dp[i][j][0] + dp[i][j][1]
+                    if curKilled > maxKilled:
+                        maxKilled = curKilled 
+
+        return maxKilled
