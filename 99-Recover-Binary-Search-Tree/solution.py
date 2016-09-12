@@ -11,15 +11,6 @@ class Solution(object):
         :type root: TreeNode
         :rtype: void Do not return anything, modify root in-place instead.
         """
-        firstElement = None
-        secondElement = None
-        preElement = TreeNode(-sys.maxint)
-
-        traverse(root)
-        temp = firstElement.val
-        firstElement.val = secondElement.val
-        secondElement.val = temp
-            
         def traverse(node):
             if not node:
                 return
@@ -30,3 +21,12 @@ class Solution(object):
                 secondElement = root
             preElement = root
             traverse(node.right)
+                firstElement = None
+                
+        secondElement = None
+        preElement = TreeNode(-sys.maxint)
+
+        traverse(root)
+        temp = firstElement.val
+        firstElement.val = secondElement.val
+        secondElement.val = temp
