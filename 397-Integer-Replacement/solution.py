@@ -1,5 +1,5 @@
 class Solution(object):
-    def integerReplacement(self, n):
+    def integerReplacement(self, n,counter = 0):
         """
         :type n: int
         :rtype: int
