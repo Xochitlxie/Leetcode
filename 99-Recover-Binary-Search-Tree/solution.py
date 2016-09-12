@@ -11,23 +11,21 @@ class Solution(object):
         :type root: TreeNode
         :rtype: void Do not return anything, modify root in-place instead.
         """
-        firstElement = None
-        secondElement = None
-        preElement = TreeNode(-sys.maxint)
-        def traverse(node):
-            if not node:
+        last = -sys.maxint
+        twoTreeNode = [None,None]
+
+        def findNode(root):
+            if not root:
                 return
-            traverse(node.left)
-            if not firstElement and preElement.val >= node.val:
-                firstElement = preElement
-            if firstElement and preElement.val >= node.val:
-                secondElement = root
-            preElement = root
-            traverse(node.right)
+            findNode(root.left)
+            if not twoTreeNode[0] and root.val >= last:
+                twoTreeNode[0] = root
+            if twoTreeNode[0] and root.val >= last:
+                twoTreeNode[1] = root
+            last = root
+            findNode(root.right)
         
-
-
-        traverse(root)
-        temp = firstElement.val
-        firstElement.val = secondElement.val
-        secondElement.val = temp
+        findNode(root)
+        temp = twoTreeNode[1].val
+        twoTreeNode[1].val = twoTreeNode[0].val
+        twoTreeNode[0].val = temp
