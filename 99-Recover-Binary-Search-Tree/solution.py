@@ -21,8 +21,8 @@ class Solution(object):
                 secondElement = root
             preElement = root
             traverse(node.right)
-                firstElement = None
-                
+        
+        firstElement = None
         secondElement = None
         preElement = TreeNode(-sys.maxint)
 
