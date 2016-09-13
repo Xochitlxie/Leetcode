@@ -1,5 +1,5 @@
 class Solution(object):
-    def findMedianSortedArrays(self, nums1, nums2):
+    def findMedianSortedArrays(self, A, B):
         """
         :type nums1: List[int]
         :type nums2: List[int]
