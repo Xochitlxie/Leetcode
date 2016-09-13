@@ -3,7 +3,6 @@ class TrieNode(object):
         self.word = None
         self.children = {}
 
-
 class Trie(object):
     def __init__(self):
         self.root = TrieNode()
@@ -13,7 +12,6 @@ class Trie(object):
         for char in word:
             root = root.children.setdefault(char, TrieNode())
         root.word = word
-
 
 class Solution(object):
     def search(self, i, j, root, board, m, n, r):
