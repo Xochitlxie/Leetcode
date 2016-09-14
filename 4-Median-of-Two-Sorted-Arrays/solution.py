@@ -8,7 +8,7 @@ class Solution(object):
         m = len(nums1) 
         n = len(nums2)
         if m > n:
-            self.findMedianSortedArray(nums2,nums1)
+            self.findMedianSortedArrays(nums2,nums1)
         if n == 0:
             raise ValueError
         
