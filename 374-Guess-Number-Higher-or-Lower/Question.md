@@ -38,4 +38,4 @@ Return 6.
 
 <div id="similar" class="btn btn-xs btn-warning">Show Similar Problems</div>
 
-<span class="hidebutton">[(E) First Bad Version](/problems/first-bad-version/)</span></div>
+<span class="hidebutton">[(E) First Bad Version](/problems/first-bad-version/) [(M) Guess Number Higher or Lower II](/problems/guess-number-higher-or-lower-ii/)</span></div>
