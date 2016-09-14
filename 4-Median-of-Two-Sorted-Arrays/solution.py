@@ -38,4 +38,3 @@ class Solution(object):
                 min_right = min(nums1[i],nums2[j])
             
             return float(max_left+min_right)/2
-                
