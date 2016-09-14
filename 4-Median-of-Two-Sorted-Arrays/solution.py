@@ -16,26 +16,26 @@ class Solution(object):
         while imin < imax:
             i = (imin + imax)/2
             j = halfLen - i
-            if i < m and j > 0 and B[j-1] > A[i]:
+            if i < m and j > 0 and nums2[j-1] > nums1[i]:
                 imin = i + 1
-            elif i > 0 and j < n and A[i-1] > B[j]:
+            elif i > 0 and j < n and nums1[i-1] > nums2[j]:
                 imax = i - 1
             else:
                 if i == 0:
-                    max_left = B[j-1]
+                    max_left = nums2[j-1]
                 if j == 0:
-                    max_left = A[i-1]
+                    max_left = nums1[i-1]
                 else:
-                    max_left = max(A[i-1],B[j-1])
+                    max_left = max(nums1[i-1],nums2[j-1])
             if (m+n)%2 == 1:
                 return max_left
             
             if i == m:
-                min_right = B[j]
+                min_right = nums2[j]
             if j == n:
-                min_right = A[i]
+                min_right = nums1[i]
             else:
-                min_right = min(A[i],B[j])
+                min_right = min(nums1[i],nums2[j])
             
             return float(max_left+min_right)/2
                 
