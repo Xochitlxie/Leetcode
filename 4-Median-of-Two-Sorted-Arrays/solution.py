@@ -27,7 +27,6 @@ class Solution(object):
                     max_left = nums1[i-1]
                 else:
                     max_left = max(nums1[i-1],nums2[j-1])
-                print max_left
                 
                 if (m+n)%2 == 1:
                     return max_left
