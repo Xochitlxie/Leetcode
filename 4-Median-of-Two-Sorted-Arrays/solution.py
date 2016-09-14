@@ -34,7 +34,7 @@ class Solution(object):
             
                 if i == m:
                     min_right = nums2[j]
-                if j == n:
+                elif j == n:
                     min_right = nums1[i]
                 else:
                     min_right = min(nums1[i],nums2[j])
