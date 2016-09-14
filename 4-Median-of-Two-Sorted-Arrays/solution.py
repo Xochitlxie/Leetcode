@@ -23,7 +23,7 @@ class Solution(object):
             else:
                 if i == 0:
                     max_left = nums2[j-1]
-                if j == 0:
+                elif j == 0:
                     max_left = nums1[i-1]
                 else:
                     max_left = max(nums1[i-1],nums2[j-1])
