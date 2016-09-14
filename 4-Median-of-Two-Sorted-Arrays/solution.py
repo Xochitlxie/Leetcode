@@ -27,14 +27,15 @@ class Solution(object):
                     max_left = nums1[i-1]
                 else:
                     max_left = max(nums1[i-1],nums2[j-1])
-            if (m+n)%2 == 1:
-                return max_left
             
-            if i == m:
-                min_right = nums2[j]
-            if j == n:
-                min_right = nums1[i]
-            else:
-                min_right = min(nums1[i],nums2[j])
+                if (m+n)%2 == 1:
+                    return max_left
             
-            return float(max_left+min_right)/2
+                if i == m:
+                    min_right = nums2[j]
+                if j == n:
+                    min_right = nums1[i]
+                else:
+                    min_right = min(nums1[i],nums2[j])
+            
+                return float(max_left+min_right)/2
