@@ -8,12 +8,12 @@ class Solution(object):
         m = len(nums1) 
         n = len(nums2)
         if m > n:
-            self.findMedianSortedArrays(nums2,nums1)
+            return self.findMedianSortedArrays(nums2,nums1)
         if n == 0:
             raise ValueError
         
-        imin,imax,halfLen = 1,m,(m+n+1)/2
-        while imin < imax:
+        imin,imax,halfLen = 0,m,(m+n+1)/2
+        while imin <= imax:
             i = (imin + imax)/2
             j = halfLen - i
             if i < m and j > 0 and nums2[j-1] > nums1[i]:
@@ -27,7 +27,8 @@ class Solution(object):
                     max_left = nums1[i-1]
                 else:
                     max_left = max(nums1[i-1],nums2[j-1])
-            
+                print max_left
+                
                 if (m+n)%2 == 1:
                     return max_left
             
