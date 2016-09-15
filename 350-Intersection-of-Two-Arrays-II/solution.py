@@ -7,7 +7,7 @@ class Solution(object):
         """
         dict = {}
         for num in nums1:
-            if num in dict:
+            if num not in dict:
                 dict[num] = 1
             else:
                 dict[num] += 1
