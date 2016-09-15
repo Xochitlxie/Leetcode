@@ -18,4 +18,4 @@ class Solution(object):
                 dict[num] -= 1
                 if dict[num] <= 0:
                     dict.remove(num)
-        return reuslt
+        return result
