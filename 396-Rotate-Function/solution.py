@@ -6,7 +6,7 @@ class Solution(object):
         """
         if len(A) <= 1:
             return 0
-        F0 = 0
+        dp = 0
         total = sum(A)
         for i in range(len(A)):
             F0 += i * A[i]
