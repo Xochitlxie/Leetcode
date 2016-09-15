@@ -7,10 +7,11 @@ class Solution(object):
         if len(A) <= 1:
             return 0
         dp = 0
+        max = -sys.maxint
         total = sum(A)
         for i in range(len(A)):
             dp += i * A[i]
         for j in range(1,len(A)):
-            next = dp-sum+len(A)*A[i-1]
-            dp = max(dp,next)
-        return dp
+            dp = dp-total+len(A)*A[j-1]
+            max = max(dp,next)
+        return max
