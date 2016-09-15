@@ -9,7 +9,7 @@ class Solution(object):
         dp = 0
         total = sum(A)
         for i in range(len(A)):
-            F0 += i * A[i]
+            dp += i * A[i]
         for j in range(1,len(A)):
             next = dp-sum+len(A)*A[i-1]
             dp = max(dp,next)
