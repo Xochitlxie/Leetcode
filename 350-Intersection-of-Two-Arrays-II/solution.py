@@ -17,5 +17,5 @@ class Solution(object):
                 result.append(n)
                 dict[num] -= 1
                 if dict[num] <= 0:
-                    dict.remove(num)
+                    dict.pop(num)
         return result
