@@ -12,13 +12,12 @@ class Solution(object):
         :type target: float
         :rtype: int
         """
-        a = root.val
+        a = root.val 
         if target < a:
             kid = root.left
         else:
             kid = root.right
-        if not kid: 
+        if not kid:
             return a
-        b = self.closestValue(kid,target)
-        return (a,b)[abs(target-a)>abs(target-b)]
-        
+        b = self.closetValue(kid,target)
+        return (a,b)[abs(a-target) > abs(b-target)]
