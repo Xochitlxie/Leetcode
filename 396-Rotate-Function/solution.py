@@ -13,5 +13,5 @@ class Solution(object):
             dp += i * A[i]
         for j in range(1,len(A)):
             dp = dp-total+len(A)*A[j-1]
-            max = max(dp,next)
+            max = max(dp,max)
         return max
