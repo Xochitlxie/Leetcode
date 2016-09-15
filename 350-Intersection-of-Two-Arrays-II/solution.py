@@ -15,7 +15,7 @@ class Solution(object):
         for n in nums2:
             if n in dict:
                 result.append(n)
-                dict[num] -= 1
-                if dict[num] <= 0:
-                    dict.pop(num)
+                dict[n] -= 1
+                if dict[n] <= 0:
+                    dict.pop(n)
         return result
