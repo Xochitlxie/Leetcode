@@ -19,5 +19,5 @@ class Solution(object):
             kid = root.right
         if not kid:
             return a
-        b = self.closetValue(kid,target)
+        b = self.closestValue(kid,target)
         return (a,b)[abs(a-target) > abs(b-target)]
