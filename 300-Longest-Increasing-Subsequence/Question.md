@@ -17,9 +17,9 @@ Special thanks to [@pbrother](https://leetcode.com/discuss/user/pbrother) for ad
 
 <div>
 
-<div id="company_tags" class="btn btn-xs btn-warning">Hide Company Tags</div>
+<div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
 
-<span class="hidebutton" style="display: inline;">[Microsoft](/company/microsoft/)</span></div>
+<span class="hidebutton">[Microsoft](/company/microsoft/)</span></div>
 
 <div>
 
