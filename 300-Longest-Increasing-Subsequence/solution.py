@@ -4,16 +4,25 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        tails = [0] * len(nums)
+        def bisect_left(l,x,hi):
+            if hi >= 0 and x > l[hi]:
+                return hi+1
+            i,j = 0,hi
+            while i < j:
+                mid = i + (j-i)/2
+                if x > l[mid]:
+                    i = mid + 1
+                else:
+                    j = mid
+            return i
+            
+        tails = [None] * len(nums)
         size = 0
         for x in nums:
-            i, j = 0, size
-            while i != j:
-                m = (i + j) / 2
-                if tails[m] < x:
-                    i = m + 1
-                else:
-                    j = m
+            i = bisect_left(tails,x,size-1)
+            print i
             tails[i] = x
-            size = max(i + 1, size)
+            size = max(size,i+1)
+            print size
         return size
+        
