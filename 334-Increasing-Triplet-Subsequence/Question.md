@@ -23,9 +23,9 @@ Special thanks to [@DjangoUnchained](https://leetcode.com/discuss/user/DjangoUnc
 
 <div>
 
-<div id="company_tags" class="btn btn-xs btn-warning">Hide Company Tags</div>
+<div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
 
-<span class="hidebutton" style="display: inline; opacity: 0;">[Facebook](/company/facebook/)</span></div>
+<span class="hidebutton">[Facebook](/company/facebook/)</span></div>
 
 <div>
 
