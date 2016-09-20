@@ -18,11 +18,9 @@ class Solution(object):
             if nums[i] == target:
                 if index == -1:
                     index = i
-                    count += 1
-                    continue
-                if random.randint(0,count) == 0:
+                elif random.randint(0,count) == 0:
                     index = i
-            count += 1
+                count += 1
         return index
                 
 
