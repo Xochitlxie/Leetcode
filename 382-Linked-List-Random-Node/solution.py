@@ -12,22 +12,22 @@ class Solution(object):
         Note that the head is guaranteed to be not null, so it contains at least one node.
         :type head: ListNode
         """
-        self.reservoir = [head.val]
-        self.n = 2
-        self.root = head.next
+        self.root = head
 
     def getRandom(self):
         """
         Returns a random node's value.
         :rtype: int
         """
-        while self.root:
-            j = random.randint(0,self.n)
-            if j < 1:
-                self.reservior[0] = self.root.val
-            self.root = self.root.next
-            self.n += 1
-        return self.reservoir[0]
+        result,n,root = self.root.val,1,self.root.next
+        while root:
+            j = random.randint(0,n)
+            print j
+            if not j:
+                result = root.val
+            root = root.next
+            n += 1
+        return result
         
 # Your Solution object will be instantiated and called as such:
 # obj = Solution(head)
