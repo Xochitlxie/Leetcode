@@ -17,11 +17,13 @@ class Solution(object):
         while l1 != None or l2 != None:
             if l1 == None:
                 sumVal = carry + l2.val
+                l2 = l2.next
             elif l2 == None:
                 sumVal = carry + l1.val
+                l1 = l1.next
             else:
                 sumVal = carry + l1.val + l2.val
             dummy.next = ListNode(sumVal%10)
             carry = sumVal/10
-            dummy,l1,l2 = dummy.next,l1.next,l2.next
+            dummy = dummy.next
         return head.next
