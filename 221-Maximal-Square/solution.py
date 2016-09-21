@@ -4,20 +4,27 @@ class Solution(object):
         :type matrix: List[List[str]]
         :rtype: int 
         """
-        if (not matrix) or (not matrix[0]):
-            return 0
-        n = len(matrix)
-        m = len(matrix[0])
-        table = [[0]*(m+1) for i in range(n+1)]
-        for i in range(1,n+1):
-            for j in range(1,m+1):
-                if matrix[i-1][j-1] == 1 or matrix[i-1][j-1] == "1":
-                    table[i][j] = min(table[i-1][j-1],table[i-1][j],table[i][j-1]) + 1
-                else:
-                    table[i][j] = 0
-        max_continous = 0
-        for i in xrange(len(table)):
-            for j in xrange(len(table[0])):
-                max_continous = max(max_continous,table[i][j])
-        result = max_continous * max_continous
-        return result
+        rows, max_size = len(matrix), 0
+        '''
+        size[i]: the current number of continuous '1's in a column of matrix. Reset when discontinued.
+        The idea is to do a by-row scan, updating size[i]
+        Then check if there are continuous elements in size whose value is bigger than current maximal size.
+        '''
+        if rows > 0:
+            cols = len(matrix[0])
+            size = [0] * cols
+            for x in xrange(rows):
+                # update size
+                count, size = 0, map(lambda x, y: x+1 if y == '1' else 0, size, matrix[x])
+                for y in xrange(cols):
+                    # check if it exceeds current maximal size
+                    if size[y] > max_size:
+                        count += 1
+                        if count > max_size:
+                            # increase maximal size by 1
+                            max_size += 1
+                            break
+                    else:
+                        count = 0
+
+        return max_size*max_size
