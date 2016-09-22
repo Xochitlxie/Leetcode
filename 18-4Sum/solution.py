@@ -1,5 +1,5 @@
 class Solution(object):
-    def fourSum(self, target, target):
+    def fourSum(self, nums, target):
         """
         :type nums: List[int]
         :type target: int
