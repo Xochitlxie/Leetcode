@@ -17,7 +17,4 @@ class Solution(object):
         return s[longest_index:longest_index + max_length]
 
 def is_palindrome(string, start, end):
-    for i in xrange((end - start + 1) / 2):
-        if string[start + i] != string[end - i]:
-            return False
-    return True 
+    return string[start:end+1] == string[start:end+1][::-1]
