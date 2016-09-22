@@ -4,17 +4,20 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-        longest_index = 0
-        max_length = 0
-        for i in xrange(len(s)):
-            if is_palindrome(s, i - max_length, i):
-                longest_index = i - max_length
-                max_length = max_length + 1
-            elif i - max_length - 1 >= 0 and is_palindrome(s, i - max_length - 1, i):
-                longest_index = i - max_length - 1
-                max_length = max_length + 2
-
-        return s[longest_index:longest_index + max_length]
-
-def is_palindrome(string, start, end):
-    return string[start:end+1] == string[start:end+1][::-1]
+        def expendAroundCenter(s,left,right):
+            while left >= 0 and right < len(s) and s[left] == s[right]:
+                left -= 1
+                right += 1
+            return right - left - 1
+            
+        start,end = 0, 0
+        for i in range(len(s)):
+            len1 = expendAroundCenter(s,i,i)
+            len2 = expendAroundCenter(s,i,i+1)
+            maxLen = max(len1,len2)
+            if (maxLen > end - start):
+                start = i - (maxLen-1)/2
+                end = i + maxLen/2
+        return s[start:end+1]
+        
+        
