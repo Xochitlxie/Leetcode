@@ -10,7 +10,7 @@ class Solution(object):
         for i, c in enumerate(s):
             d[c] = i
             if len(d) > k:
-                low = min(d.values())
+                low = min(d.values())+1
                 del d[s[low]]
                 low += 1
             ret = max(i - low + 1, ret)
