@@ -7,6 +7,8 @@ class Solution(object):
         :type k: int
         :rtype: str
         """
+        if k == 0:
+            return str
         count = {}
         for char in str:
             count[char] = count.get(char,0) + 1
@@ -16,7 +18,8 @@ class Solution(object):
         heapq.heapify(l)
         queue = collections.deque()
         while len(queue) < k:
-            queue.append(heapq.heappop(l))
+            while l:
+                queue.append(heapq.heappop(l))
         if len(queue) < k:
             return ""
         print queue
