@@ -7,7 +7,8 @@ class Solution(object):
         if len(points) <= 1: return True
         mid = (min(points)[0] + max(points)[0])*1.0/2
         count = {}
-        for point in set(points):
+        k = list(set(points))
+        for point in k:
             if point[0] == mid:
                 continue
             elif point[0] < mid:
