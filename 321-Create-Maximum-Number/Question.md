@@ -39,3 +39,9 @@ Special thanks to [@dietpepsi](https://leetcode.com/discuss/user/dietpepsi) for 
 <div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
 
 <span class="hidebutton">[Dynamic Programming](/tag/dynamic-programming/) [Greedy](/tag/greedy/)</span></div>
+
+<div>
+
+<div id="similar" class="btn btn-xs btn-warning">Show Similar Problems</div>
+
+<span class="hidebutton">[(M) Remove K Digits](/problems/remove-k-digits/)</span></div>
