@@ -13,8 +13,9 @@ class Solution(object):
                 stack.pop()
                 k -= 1
             stack.append(i)
+        #print stack
+        i = 0
         while stack:
-            i = 0
             if stack[i] == "0":
                 i += 1
             else:
