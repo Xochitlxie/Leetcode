@@ -19,7 +19,7 @@ class WordDictionary(object):
         node = self.root
         for i in word:
             if i not in node.children:
-                node.children[i] = TrieNode
+                node.children[i] = TrieNode()
             node = node.children[i]
         node.isWord = True
 
