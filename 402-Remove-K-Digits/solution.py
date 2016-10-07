@@ -9,15 +9,19 @@ class Solution(object):
             return "0"
         stack = []
         for i in num:
-            if k>0 and stack and stack[-1] > i:
+            while k>0 and stack and stack[-1] > i:
                 stack.pop()
                 k -= 1
             stack.append(i)
-        #print stack
+        while k:
+            stack.pop()
+            k -= 1
         i = 0
-        while stack:
+        while stack and i < len(stack):
             if stack[i] == "0":
                 i += 1
             else:
                 break
+        if i == len(stack):
+            return "0"
         return ('').join(stack[i:])
