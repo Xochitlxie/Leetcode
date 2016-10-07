@@ -41,7 +41,7 @@ class WordDictionary(object):
                 return False
             elif word[i] not in node.children:
                 return False
-            node = node.children[i]
+            node = node.children[word[i]]
         return node.isWord
                 
 # Your WordDictionary object will be instantiated and called as such:
