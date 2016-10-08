@@ -4,6 +4,9 @@
 
 Given an array _nums_ and a target value _k_, find the maximum length of a subarray that sums to _k_. If there isn't one, return 0 instead.
 
+**Note:**  
+The sum of the entire _nums_ array is guaranteed to fit within the 32-bit signed integer range.
+
 **Example 1:**  
 
 Given _nums_ = `[1, -1, 5, -2, 3]`, _k_ = `3`,  
