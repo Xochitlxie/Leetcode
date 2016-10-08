@@ -4,26 +4,14 @@ class Solution(object):
         :type ratings: List[int]
         :rtype: int
         """
-        if len(ratings) <= 1:
-            return len(ratings)
-        countDown,prev,total = 0,1,1
-        for i in range(1,len(ratings)):
-            if ratings[i] >= ratings[i-1]:
-                if countDown > 0 :
-                    total += countDown*(countDown+1)/2
-                    if countDown >= prev:
-                        total += countDown - prev + 1
-                    countDown = 0
-                    prev = 1
-                if ratings[i] == ratings[i-1]:
-                    prev = 1
-                else:
-                    prev += 1
-                total += prev
-            else:
-                countDown += 1
-        if countDown > 0:
-            total += countDown*(countDown+1)/2  
-            if countDown >= prev:
-                total += countDown - prev + 1
-        return total
+        res = [1] * len(ratings)
+        for i in range(len(ratings)-1):
+            if ratings[i] < ratings[i+1]:
+                res[i+1] = res[i] + 1
+        print res
+        for j in range(-1,-len(ratings),-1):
+            if ratings[j] < ratings[j-1]:
+                if res[j-1] < res[j] + 1:
+                    res[j-1] = res[j] + 1
+        print res
+        return sum(res)
