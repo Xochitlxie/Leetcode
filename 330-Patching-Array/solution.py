@@ -8,8 +8,9 @@ class Solution(object):
         miss,added,i = 0,0,0
         while miss <= n:
             if i < len(nums) and nums[i] <= miss:
-                i += 1
+                
                 miss += nums[i]
+                i += 1
             else:
                 miss += miss
                 added += 1
