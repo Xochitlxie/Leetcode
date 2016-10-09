@@ -10,7 +10,6 @@ class Solution(object):
             if i < len(nums) and nums[i] <= miss:
                 i += 1
                 miss += nums[i]
-            
             else:
                 miss += miss
                 added += 1
