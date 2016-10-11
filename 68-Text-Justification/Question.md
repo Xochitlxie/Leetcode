@@ -38,7 +38,7 @@ Return the formatted lines as:
 
 <div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
 
-<span class="hidebutton">[LinkedIn](/company/linkedin/) [Airbnb](/company/airbnb/)</span></div>
+<span class="hidebutton">[LinkedIn](/company/linkedin/) [Airbnb](/company/airbnb/) [Facebook](/company/facebook/)</span></div>
 
 <div>
 
