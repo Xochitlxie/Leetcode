@@ -9,6 +9,8 @@ class Solution(object):
         for char in s:
             if len(stack) == 0:
                 stack.append(char)
+            elif len(stack) > len(s)/2:
+                return False
             elif char in dict and dict[char] == stack[-1]:
                 stack.pop()
             else:
