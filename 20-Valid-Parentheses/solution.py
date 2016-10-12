@@ -5,13 +5,11 @@ class Solution(object):
         :rtype: bool
         """
         stack = []
-        dict = {"}":"{","]":"[",")":"("}
+        bracketMap = {")":"(","]":"[","}":"{"}
         for char in s:
             if len(stack) == 0:
                 stack.append(char)
-            elif len(stack) > len(s)/2:
-                return False
-            elif char in dict and dict[char] == stack[-1]:
+            elif char in bracketMap and bracketMap[char] == stack[-1]:
                 stack.pop()
             else:
                 stack.append(char)
